@@ -1,2 +1,9 @@
 format: jb-book
 root: dark_matter_detection
+chapters:
+- file: chapter1/chapter1.ipynb
+  title: Lecture 1
+- file: chapter2/chapter2.ipynb
+  title: Lecture 2
+- file: chapter3/chapter3.ipynb
+  title: Lecture 3
