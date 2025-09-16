@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 2 &#8212; My Jupyter Book</title>
+    <title>Lecture 2 - Elastic scattering of WIMPs &#8212; My Jupyter Book</title>
   
   
   
@@ -60,11 +60,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2/chapter2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Chapter 3" href="../chapter3/chapter3.html" />
-    <link rel="prev" title="Chapter 1" href="../chapter1/chapter1.html" />
+    <link rel="prev" title="Lecture 1 - Varieties of dark matter and suitable detectors" href="../chapter1/chapter1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -276,7 +278,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -287,11 +291,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 2</h1>
+    <h1>Lecture 2 - Elastic scattering of WIMPs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-wimp-elastic-scattering-rate-for-an-idealised-detector">Overall WIMP elastic scattering rate for an idealised detector</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -301,8 +313,38 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2">
-<h1>Chapter 2<a class="headerlink" href="#chapter-2" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-elastic-scattering-of-wimps">
+<h1>Lecture 2 - Elastic scattering of WIMPs<a class="headerlink" href="#lecture-2-elastic-scattering-of-wimps" title="Permalink to this headline">#</a></h1>
+<p>Because we don’t know exactly what a WIMP is, we have to make some assumptions about properties we would expect all WIMPs to have in order to detect them. The most robust direct searches for WIMPs, which it turns out also have the greatest sensitivities, make the assumption that all WIMPs, no matter what their theoretical origin, will scatter elastically off a nucleus. By elastic scattering, we mean that before and after the scatter, the species involved are the same. So, in goes a WIMP and strikes a nucleus, and after the collision you are left with the same WIMP and the same species of nucleus in the final state. Have a think about why this corresponds to the meaning of elastic scattering in ordinary classical physics.</p>
+<p>An additional important assumption made by all direct searches is that WIMPs are all around us in the laboratory. This is true if the dark matter halo of our galaxy exists, and is sufficiently smooth so that there is a non-zero density everywhere within the halo.</p>
+<p>The underlying process is the interaction of a WIMP with a neutron or a proton. We have reasonable confidence that WIMPs will scatter off neutrons and protons because they are by definition weakly interacting, and the weak gauge bosons, <span class="math notranslate nohighlight">\(\rm W^{\pm}\)</span> and <span class="math notranslate nohighlight">\(\rm Z^0\)</span> have couplings to nucleons. Of course, the nucleons are in turn composed of quarks and gluons, but at the low energies of WIMP elastic scattering it is protons and neutrons, or nucleons, that act as the fundamental particles inside the nucleus. It is at higher energies accessible only in accelerators where you start to see scattering off individual quarks.</p>
+<section id="overall-wimp-elastic-scattering-rate-for-an-idealised-detector">
+<h2>Overall WIMP elastic scattering rate for an idealised detector<a class="headerlink" href="#overall-wimp-elastic-scattering-rate-for-an-idealised-detector" title="Permalink to this headline">#</a></h2>
+<p>Let us consider an idealised detector consisting of a cuboid of nuclei of some element, atomic number <span class="math notranslate nohighlight">\(A\)</span>. Importantly it is the nucleus that is actually scattered by the WIMP, rather than the individual nucleons. This will have consequences that will be discussed in the next lecture. The cuboid is of height <span class="math notranslate nohighlight">\(H\)</span>, width <span class="math notranslate nohighlight">\(W\)</span> and length <span class="math notranslate nohighlight">\(L\)</span>, and contains a mass <span class="math notranslate nohighlight">\(M\)</span> in kilograms of the detecting element. The number of nuclei available for WIMPs to scatter off, <span class="math notranslate nohighlight">\(N\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+N&amp;=\frac{1000MN_A}{A},
+\tag{2.1}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_A\)</span> is Avogadro’s number and the factor of <span class="math notranslate nohighlight">\(\rm 1000\)</span> occurs because <span class="math notranslate nohighlight">\(A\)</span> is the number of grams in a mole of a substance. Now, let us consider WIMPs having some velocity <span class="math notranslate nohighlight">\(v\)</span> incident normal to the end of this detector, height <span class="math notranslate nohighlight">\(H\)</span> and width <span class="math notranslate nohighlight">\(W\)</span>. From the perspective of the incoming WIMP, there are <span class="math notranslate nohighlight">\(N\)</span> target particles. The probability of elastic scattering off any one of the nuclei is encoded in the elastic scattering cross section for the nucleus. This is the classical area that the incoming WIMP has to strike in order for any elastic scatter to occur. This area is the same for each nucleus, as they are all physically identical. These cross sections are such tiny areas that the probability of the WIMP scattering twice is negligible. Let us use <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}\)</span> to denote this elastic scattering cross section off a nuclus.</p>
+<p>Since each nucleus is independent of the others, the total cross section for elastic scattering off any one of the nuclei is the number of nuclei times <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}\)</span>. So, the total cross section for scattering in the detector, <span class="math notranslate nohighlight">\(\sigma_{\rm DET}\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\sigma_{\rm DET}&amp;=N\sigma_{\rm NUC}=\frac{1000MN_A\sigma_{\rm NUC}}{A}.
+\tag{2.2}
+\end{align}\]</div>
+<p>Since the nuclei are distributed roughly uniformly throughout the volume, the probability of our WIMP intersecting one of the cross sections required for scattering is given by the ratio of this cross section to the total area of the detector to the incoming WIMP, which is <span class="math notranslate nohighlight">\(WH\)</span>. Therefore the probability <span class="math notranslate nohighlight">\(p_{\rm 1e}\)</span> of a single WIMP undergoing an elastic scatter in the detector is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+p_{\rm 1e}&amp;=\frac{\sigma_{\rm DET}}{WH}=\frac{1000MN_A\sigma_{\rm NUC}}{AWH}.
+\tag{2.3}
+\end{align}\]</div>
+<p>Now consider a population of WIMPs all having this same velocity <span class="math notranslate nohighlight">\(v\)</span>. Suppose that the number density of these WIMPs is <span class="math notranslate nohighlight">\(n\)</span> per cubic metre. If they are all approaching the detector in the same direction, then the flux, the number of WIMPs crossing a unit area of detector surface into the detector per unit time, is given by <span class="math notranslate nohighlight">\(\Phi=nv\)</span>. This is because the common velocity of the WIMPs is <span class="math notranslate nohighlight">\(v\)</span> metres per second, so <span class="math notranslate nohighlight">\(v\)</span> metres cubed passes into the detector in a second for each <span class="math notranslate nohighlight">\(\rm m^2\)</span> of the detector surface. However, the area of the end of the detector is <span class="math notranslate nohighlight">\(WH\)</span> so that the number of WIMPs entering the detector per second is <span class="math notranslate nohighlight">\(\Phi WH=nvWH\)</span>. Each of these WIMPs has a probability of <span class="math notranslate nohighlight">\(p_{\rm 1e}\)</span> of scattering. Hence the rate at which elastic scatters occurs between this population of WIMPs and the nuclei in the detector, <span class="math notranslate nohighlight">\(R_{\rm TOT}(v)\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+R_{\rm TOT}(v)&amp;=\frac{1000MN_A\sigma_{\rm NUC}nv}{A}.
+\end{align}\]</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -342,7 +384,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Chapter 1</p>
+        <p class="prev-next-title">Lecture 1 - Varieties of dark matter and suitable detectors</p>
       </div>
     </a>
     <a class="right-next"
@@ -363,6 +405,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-wimp-elastic-scattering-rate-for-an-idealised-detector">Overall WIMP elastic scattering rate for an idealised detector</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
