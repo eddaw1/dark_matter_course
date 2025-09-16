@@ -302,6 +302,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-wimp-elastic-scattering-rate-for-an-idealised-detector">Overall WIMP elastic scattering rate for an idealised detector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wimp-nucleon-elastic-cross-sections">WIMP nucleon elastic cross sections</a></li>
 </ul>
             </nav>
         </div>
@@ -315,9 +316,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-elastic-scattering-of-wimps">
 <h1>Lecture 2 - Elastic scattering of WIMPs<a class="headerlink" href="#lecture-2-elastic-scattering-of-wimps" title="Permalink to this headline">#</a></h1>
-<p>Because we don’t know exactly what a WIMP is, we have to make some assumptions about properties we would expect all WIMPs to have in order to detect them. The most robust direct searches for WIMPs, which it turns out also have the greatest sensitivities, make the assumption that all WIMPs, no matter what their theoretical origin, will scatter elastically off a nucleus. By elastic scattering, we mean that before and after the scatter, the species involved are the same. So, in goes a WIMP and strikes a nucleus, and after the collision you are left with the same WIMP and the same species of nucleus in the final state. Have a think about why this corresponds to the meaning of elastic scattering in ordinary classical physics.</p>
+<p>Because we don’t know exactly what a WIMP is, we have to make some assumptions about properties we would expect all WIMPs to have in order to detect them. The most robust direct searches for WIMPs, which it turns out also have the greatest sensitivities, make the assumption that all WIMPs, no matter what their theoretical origin, will scatter elastically off a nucleus. By elastic scattering, we mean that before and after the scatter, the species involved are the same. So, in goes a WIMP and strikes a nucleus, and after the collision you are left with the same WIMP and the same species of nucleus in the final state. Have a think about why this corresponds to the meaning of elastic scattering in ordinary classical physics. The nucleus, however, has gained some energy, and it turns out that this energy is sufficient, with the right choice of detector material, to give rise to signals that can be detected in a variety of different ways.</p>
 <p>An additional important assumption made by all direct searches is that WIMPs are all around us in the laboratory. This is true if the dark matter halo of our galaxy exists, and is sufficiently smooth so that there is a non-zero density everywhere within the halo.</p>
-<p>The underlying process is the interaction of a WIMP with a neutron or a proton. We have reasonable confidence that WIMPs will scatter off neutrons and protons because they are by definition weakly interacting, and the weak gauge bosons, <span class="math notranslate nohighlight">\(\rm W^{\pm}\)</span> and <span class="math notranslate nohighlight">\(\rm Z^0\)</span> have couplings to nucleons. Of course, the nucleons are in turn composed of quarks and gluons, but at the low energies of WIMP elastic scattering it is protons and neutrons, or nucleons, that act as the fundamental particles inside the nucleus. It is at higher energies accessible only in accelerators where you start to see scattering off individual quarks.</p>
 <section id="overall-wimp-elastic-scattering-rate-for-an-idealised-detector">
 <h2>Overall WIMP elastic scattering rate for an idealised detector<a class="headerlink" href="#overall-wimp-elastic-scattering-rate-for-an-idealised-detector" title="Permalink to this headline">#</a></h2>
 <p>Let us consider an idealised detector consisting of a cuboid of nuclei of some element, atomic number <span class="math notranslate nohighlight">\(A\)</span>. Importantly it is the nucleus that is actually scattered by the WIMP, rather than the individual nucleons. This will have consequences that will be discussed in the next lecture. The cuboid is of height <span class="math notranslate nohighlight">\(H\)</span>, width <span class="math notranslate nohighlight">\(W\)</span> and length <span class="math notranslate nohighlight">\(L\)</span>, and contains a mass <span class="math notranslate nohighlight">\(M\)</span> in kilograms of the detecting element. The number of nuclei available for WIMPs to scatter off, <span class="math notranslate nohighlight">\(N\)</span>, is</p>
@@ -343,7 +343,20 @@ p_{\rm 1e}&amp;=\frac{\sigma_{\rm DET}}{WH}=\frac{1000MN_A\sigma_{\rm NUC}}{AWH}
 <div class="math notranslate nohighlight">
 \[\begin{align}
 R_{\rm TOT}(v)&amp;=\frac{1000MN_A\sigma_{\rm NUC}nv}{A}.
+\tag{2.4}
 \end{align}\]</div>
+<p>Notice that this scattering rate depends on the total mass <span class="math notranslate nohighlight">\(M\)</span> of the detector, but not the ratio of its side lengths. Any cuboid will have the same scattering rate. In fact, it turns out that only the amount of detector material, the number of nuclei, is present in the rate formula. You can make a WIMP detector any shape you like, and optimise its shape to suit the detectors that are instrumenting it.</p>
+</section>
+<section id="wimp-nucleon-elastic-cross-sections">
+<h2>WIMP nucleon elastic cross sections<a class="headerlink" href="#wimp-nucleon-elastic-cross-sections" title="Permalink to this headline">#</a></h2>
+<p>The underlying process is the interaction of a WIMP with a neutron or a proton. We have reasonable confidence that WIMPs will scatter off neutrons and protons because they are by definition weakly interacting, and the weak gauge bosons, <span class="math notranslate nohighlight">\(\rm W^{\pm}\)</span> and <span class="math notranslate nohighlight">\(\rm Z^0\)</span> have couplings to nucleons. Of course, the nucleons are in turn composed of quarks and gluons, but at the low energies of WIMP elastic scattering it is protons and neutrons, or nucleons, that act as the fundamental particles inside the nucleus. It is at higher energies accessible only in accelerators where you start to see scattering off individual quarks.</p>
+<p>Since the fundamental process is between a WIMP and a nucleon, its probability is usually expressed in terms of the WIMP nucleon cross section, which we denote by <span class="math notranslate nohighlight">\(\sigma_N\)</span>. This cross section is the same for neutrons and protons because WIMPs are electrically neutral and hence do not couple to the different charges of protons and neutrons. The question is, how is this cross section related to the cross section for the process that actually occurs, which is the elastic scattering of the WIMP off the whole nucleus, <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}\)</span>?</p>
+<p>Naively, a nucleus consists of <span class="math notranslate nohighlight">\(A\)</span> nucleons, so you might expect that <span class="math notranslate nohighlight">\(\sigma_N\)</span> is perhaps equal to <span class="math notranslate nohighlight">\(A\sigma_{\rm NUC}\)</span>. This assumption is based on treating the nucleons in the nucleus as if they act independently of each other. For the nucleons in a nucleus t act independently in this way, two things would have to be true:</p>
+<ul class="simple">
+<li><p>The WIMP would have to scatter off one nucleon in the nucleus, without having any interaction or coupling to the other nucleons.</p></li>
+<li><p>Any single nucleon would have to scatter, taking the recoil energy and momentum from the collision and leaving the other nucleons behind.</p></li>
+</ul>
+<p>Neither of these assumptions are thought to hold up. In fact, both in the scattering process itself and in the final state recoil, the nucleons in the nucleus behave coherently. It turns out that this coherence between nucleons enhances the cross section for scattering of a nucleus by WIMPs substantially compared to the naive <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}=A\sigma_N\)</span> that results from assuming incoherent scattering.</p>
 </section>
 </section>
 
@@ -415,6 +428,7 @@ R_{\rm TOT}(v)&amp;=\frac{1000MN_A\sigma_{\rm NUC}nv}{A}.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-wimp-elastic-scattering-rate-for-an-idealised-detector">Overall WIMP elastic scattering rate for an idealised detector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wimp-nucleon-elastic-cross-sections">WIMP nucleon elastic cross sections</a></li>
 </ul>
   </nav></div>
 
