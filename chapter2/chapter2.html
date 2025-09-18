@@ -304,7 +304,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-wimp-elastic-scattering-rate-for-an-idealised-detector">Overall WIMP elastic scattering rate for an idealised detector</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wimp-nucleon-elastic-cross-sections">WIMP nucleon elastic cross sections</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wimp-nucleon-elastic-scattering-modelled-as-a-collision-between-hard-spheres">WIMP nucleon elastic scattering modelled as a collision between hard spheres</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fermi-golden-rule">The Fermi Golden Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbative-quantum-mechanical-analysis-of-wimp-nuclear-elastic-scattering">Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering</a></li>
 </ul>
             </nav>
         </div>
@@ -366,8 +366,8 @@ R_{\rm TOT}(v)&amp;=\frac{1000MN_A\sigma_{\rm NUC}nv}{A}.
 <p><img alt="elastic scattering" src="../_images/wimp_recoil_lab.pdf" /></p>
 <p>We aim here to learn about the kinematics of the WIMP nuclear elastic collision. Because we are using a classical model, some classical parameters and concepts enter into this model of the problem. These classical ideas should be absent from the final results. One example is the classical radii of the incoming WIMP and that of the target nucleus. In this model, the sum of the classical radii of the WIMP and the nucleus is <span class="math notranslate nohighlight">\(R\)</span>. The incoming trajectory of the WIMP, extrapolated past the collision point, has a closest approach to the centre of the target WIMP of distance <span class="math notranslate nohighlight">\(b\)</span>. This distance of closest approach, <span class="math notranslate nohighlight">\(b\)</span>, is called the impact parameter of the collision. If <span class="math notranslate nohighlight">\(b&gt;R\)</span>, then the WIMP misses the nucleus and no elastic scatter takes place. The correspondance with cross sections is that the collision cross section for the WIMP nuclear scatter is <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}=\pi R^2\)</span>.</p>
 </section>
-<section id="the-fermi-golden-rule">
-<h2>The Fermi Golden Rule<a class="headerlink" href="#the-fermi-golden-rule" title="Permalink to this headline">#</a></h2>
+<section id="perturbative-quantum-mechanical-analysis-of-wimp-nuclear-elastic-scattering">
+<h2>Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering<a class="headerlink" href="#perturbative-quantum-mechanical-analysis-of-wimp-nuclear-elastic-scattering" title="Permalink to this headline">#</a></h2>
 <p>The hard sphere scattering model yields lots of information, but it isn’t perfect. We have assumed that the nucleus is a hard ball, but we know that we are actually interested in scattering off the neutrons and protons it contains. We could do with a slightly more sophisticated quantum mechanical treatment of the scattering problem. Fortunately, the scattering problem is non-relativistic, so that with a little extra work the non-relativistic perturbation theory you learned in second year can be used to analyse WIMP nuclear scattering.</p>
 <p>First, we put the entire system, the WIMP, the nucleus, everything, in a box. This has the effect of making the space of states for the incoming and outgoing WIMP finite. We start by writing down Schrodingers equation for the free WIMP, without the interaction with the nucleus. The eigenstates of the time independent Schrodinger equation available to the WIMP are <span class="math notranslate nohighlight">\(\phi_n(\vec{x})\)</span> corresponding to energy eigenvalues <span class="math notranslate nohighlight">\(E_n\)</span> so that the time independent Schrodinger equation is <span class="math notranslate nohighlight">\(H_0\phi_n(\vec{x})=E_n\phi_n(x)\)</span>. The different possible states in the box obey an orthonormality relation, so that</p>
 <div class="math notranslate nohighlight">
@@ -401,8 +401,8 @@ R_{\rm TOT}(v)&amp;=\frac{1000MN_A\sigma_{\rm NUC}nv}{A}.
 <p>The next step is to multiply by <span class="math notranslate nohighlight">\(\phi_m^*(\vec{x})\)</span> and integrate over all space.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-\sum_n a_n(t)\int\phi_m^*(\vec{x})V(\vec{x})\phi_n(\vec{x})d\vec{x}e^{-iE_nt/\hbar}
-&amp;= i\hbar\sum_n\int\phi_m^*(\vec{x})\phi_n(\vec{x})d\vec{x}e^{-iE_nt/\hbar}\frac{da_n}{dt}
+\sum_n a_n(t)\int\phi_m^*(\vec{x})V(\vec{x})\phi_n(\vec{x})d^3x\,e^{-iE_nt/\hbar}
+&amp;= i\hbar\sum_n\int\phi_m^*(\vec{x})\phi_n(\vec{x})d^3x\,e^{-iE_nt/\hbar}\frac{da_n}{dt}
 \nonumber \\
 &amp;= i\hbar\sum_n \delta_{mn}e^{-iE_nt/\hbar}\frac{da_n}{dt} \nonumber \\
 &amp;= i\hbar\frac{da_m}{dt}e^{-iE_mt/\hbar}.
@@ -412,10 +412,56 @@ R_{\rm TOT}(v)&amp;=\frac{1000MN_A\sigma_{\rm NUC}nv}{A}.
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \frac{da_m}{dt}&amp;=
-\frac{-i}{\hbar}\sum_n a_n(t)
-\int\phi_m^*(\vec{x})V(\vec{x})\phi_n(\vec{x})e^{i(E_m-E_n)t/\hbar}. 
+\frac{-i}{\hbar}\sum_n a_n(t)e^{i(E_m-E_n)t/\hbar}
+\int\phi_m^*(\vec{x})V(\vec{x})\phi_n(\vec{x})\,d^3x. 
 \tag{2.10}
 \end{align}\]</div>
+<p>Next we consider that, to first order in perturbation theory, the time rate of change of <span class="math notranslate nohighlight">\(a_m\)</span>, the coefficient of the mth wavefunction of the unperturbed hamiltonian in the wavefunction of the scattered wimp, will be dominated by one particular input wave function. We therefore denote the output wave function by <span class="math notranslate nohighlight">\(m=f\)</span>, for final, and the input wavefunction we take to be dominated by one particular <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(n=i\)</span>, for initial. The dominance of one particular term allows us to dispence with the sum, and set <span class="math notranslate nohighlight">\(a_f=1\)</span>. We therefore get</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\frac{da_f}{dt}&amp;=\frac{-i}{\hbar}
+e^{i(E_f-E_i)t/\hbar}\int\phi_f^*(\vec{x})V(\vec{x})\phi_i(\vec{x})\,d^3x
+\tag{2.11}
+\end{align}\]</div>
+<p>We interpret <span class="math notranslate nohighlight">\(da_f/dt\)</span> as the rate at which the amplitude for the final state wave function is accumulating during the scattering, as time evolves. The integral over space represents the quantum mechanics of the interaction between the WIMP and the nucleus. We shall denote this integral by <span class="math notranslate nohighlight">\(V_{fi}\)</span>. It is often called the matrix element for the process. We shall see that it has a bearing on the scattering probability.</p>
+<p>Our final piece of interpretation to interpret <span class="math notranslate nohighlight">\(a_{fi}\)</span>. It is a complex amplitude, and as usual in quantum mechanics its modulus squared is going to contribute to a probability. The interpretation is that the interaction is significant only over a finite time period <span class="math notranslate nohighlight">\(T\)</span>, between <span class="math notranslate nohighlight">\(t=-T/2\)</span> and <span class="math notranslate nohighlight">\(t=+T/2\)</span>. We integrate <span class="math notranslate nohighlight">\(da_f/dt\)</span> over this period.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+a_m&amp;=\frac{-i}{\hbar}V_{fi}\int_{t=-\infty}^{+\infty}\,dt\,e^{i(E_f-E_i)t/\hbar}
+\tag{2.12}
+\end{align}\]</div>
+<p>We let <span class="math notranslate nohighlight">\(u=t/\hbar\)</span> so that <span class="math notranslate nohighlight">\(dt=\hbar du\)</span>, and this integral becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+a_m&amp;=\frac{-i}V_{fi}\int_{u=-\infty}^{+\infty}\,du\,e^{i(E_f-E_i)u}
+\tag{2.13}
+\end{align}\]</div>
+<p>The integral is an example of a Dirac delta that you were shown in second year when you studied Fourier transforms,</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\int_{u=-\infty}^{+\infty}\,du\,e^{i(E_f-E_i)u}&amp;=2\pi\delta(E_f-E_i). 
+\tag{2.14}
+\end{align}\]</div>
+<p>Applying this result we obtain an expression for <span class="math notranslate nohighlight">\(a_f\)</span> after the interaction has taken place,</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+a_f=-2\pi i\delta(E_f-E_i)V_{fi}
+\tag{2.15}
+\end{align}\]</div>
+<p>The appearance of the Dirac delta in the energy enforces overall energy conservation - the final state (including the recoiling WIMP) must have the same total energy as the initial state. Because this is elastic scattering, the sum of the masses before and after the collision is also conserved, hence the total kinetic energy is also conserved in the collision, just as it was in the classical hard sphere model.</p>
+<p>It is tempting to assign a physical meaning to <span class="math notranslate nohighlight">\(a_f\)</span> itself, as a quantum mechanical amplitude for the transition from the initial incoming WIMP state to the final state of the scatterred WIMP and nucleus. However, it is not so easy to figure out the normalisation for this scattering amplitude. It is more fruitful to instead calculate <span class="math notranslate nohighlight">\(|a_{fi}|^2/T\)</span>, where <span class="math notranslate nohighlight">\(T\)</span> is the interaction time. This quantity has the units of a rate, and is called the rate for the conversion of WIMPs into this particular final state.</p>
+<p>We combine Equation 2.13 with the complex conjugate of Equation 2.15, to obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+R_{fi}=\frac{a_{fi}a_{fi}^*}{T}&amp;=\frac{2\pi}{\hbar}\frac{V_{fi}V_{fi}^*}{T}\delta(E_f-E_i)
+\int_{t=-T/2}^{+T/2}\,dt\,e^{i(E_f-E_i)t/\hbar} \nonumber \\
+&amp;=\frac{2\pi}{\hbar}\frac{|V_{fi}|^2}{T}\delta(E_f-E_i)\int_{t=-T/2}^{+T/2}\,dt \nonumber \\
+&amp;=\frac{2\pi}{\hbar}|V_{fi}|^2\delta(E_f-E_i). 
+\tag{2.16}
+\end{align}\end{split}\]</div>
+<p>The physical meaning of this result, known as the Fermi golden rule, is as follows. <span class="math notranslate nohighlight">\(R_{fi}\)</span> is the rate of conversion of incoming WIMPs into this particular final state, which we take to be the WIMP and nucleus having undergone elastic scattering. The Dirac delta means that the process only has a non-zero rate if total energy, and hence kinetic energy, is conserved. If total energy is conserved, then the rate for this particular process is given by the modulus squared of the matrix element, <span class="math notranslate nohighlight">\(V_{fi}\)</span>. This matrix element contains the quantum physics of the interaction between the WIMP and the nucleus. Its detailed form is dependent on the exact physics behind the WIMP in question, but <span class="math notranslate nohighlight">\(V_{fi}\)</span> may be diagrammatically represented as below.</p>
+<p>Evaluation of these matrix elements turns out to have quite an important impact on the rate of WIMP nuclear elastic scattering, and is the first part of the connection between the WIMP nuclear and WIMP nucleon elastic scattering cross sections.</p>
+<p>The final important observation is that there may be more than one final state that has the same final state kinetic energy of the WIMP. We already know from the hard sphere scattering analysis that the final state kinetic energy of the WIMP is determined by the scattering angle <span class="math notranslate nohighlight">\(\theta\)</span>. However, the azimuthal angle <span class="math notranslate nohighlight">\(\phi\)</span> can be anything, and still give rise to the same final state WIMP kinetic energy. If we are interested in the rate of a particular final state nuclear recoil energy, the rate is multiplied by the number of states in which the nuclear recoil energy takes a particular value. Classically, there are an infinite number of values of the azimuthal angle, but quantum mechanically the final state is quantised, and the number of possible states is, as alluded to in the hard sphere analysis, proportional to the magnitude of the final state momentum of the nucleus. This is closely analogous to the calculation of the density of the final states in statistical mechanics, only here one of the two angles is fixed, and only the other one is allowed to vary. So, the golden rule as sometimes written contains a factor usually denoted by <span class="math notranslate nohighlight">\(\rho(E_f)\)</span>, or <span class="math notranslate nohighlight">\(dN/dE_f\)</span>, customarily called the density of final states. This is in fact the degeneracy of final states that have the same final state observables. The density of final states turns out to be critical to the second part of working out the connection between the WIMP nuclear and WIMP nucleon elastic scattering cross sections.</p>
 </section>
 </section>
 
@@ -489,7 +535,7 @@ R_{\rm TOT}(v)&amp;=\frac{1000MN_A\sigma_{\rm NUC}nv}{A}.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-wimp-elastic-scattering-rate-for-an-idealised-detector">Overall WIMP elastic scattering rate for an idealised detector</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wimp-nucleon-elastic-cross-sections">WIMP nucleon elastic cross sections</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wimp-nucleon-elastic-scattering-modelled-as-a-collision-between-hard-spheres">WIMP nucleon elastic scattering modelled as a collision between hard spheres</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fermi-golden-rule">The Fermi Golden Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbative-quantum-mechanical-analysis-of-wimp-nuclear-elastic-scattering">Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering</a></li>
 </ul>
   </nav></div>
 
