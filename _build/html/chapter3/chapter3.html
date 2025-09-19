@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering &#8212; My Jupyter Book</title>
+    <title>Lecture 3 - Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering &#8212; My Jupyter Book</title>
   
   
   
@@ -288,7 +288,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering</h1>
+    <h1>Lecture 3 - Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -302,21 +302,30 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="perturbative-quantum-mechanical-analysis-of-wimp-nuclear-elastic-scattering">
-<h1>Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering<a class="headerlink" href="#perturbative-quantum-mechanical-analysis-of-wimp-nuclear-elastic-scattering" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-3-perturbative-quantum-mechanical-analysis-of-wimp-nuclear-elastic-scattering">
+<h1>Lecture 3 - Perturbative quantum mechanical analysis of WIMP nuclear elastic scattering<a class="headerlink" href="#lecture-3-perturbative-quantum-mechanical-analysis-of-wimp-nuclear-elastic-scattering" title="Permalink to this headline">#</a></h1>
 <p>The hard sphere scattering model yields lots of information, but it isn’t perfect. We have assumed that the nucleus is a hard ball, but we know that we are actually interested in scattering off the neutrons and protons it contains. We could do with a slightly more sophisticated quantum mechanical treatment of the scattering problem. Fortunately, the scattering problem is non-relativistic, so that with a little extra work the non-relativistic perturbation theory you learned in second year can be used to analyse WIMP nuclear scattering.</p>
-<p>First, we put the entire system, the WIMP, the nucleus, everything, in a box. This has the effect of making the space of states for the incoming and outgoing WIMP finite. We start by writing down Schrodingers equation for the free WIMP, without the interaction with the nucleus. The eigenstates of the time independent Schrodinger equation available to the WIMP are <span class="math notranslate nohighlight">\(\phi_n(\vec{x})\)</span> corresponding to energy eigenvalues <span class="math notranslate nohighlight">\(E_n\)</span> so that the time independent Schrodinger equation is <span class="math notranslate nohighlight">\(H_0\phi_n(\vec{x})=E_n\phi_n(x)\)</span>. The different possible states in the box obey an orthonormality relation, so that</p>
+<p>First, we put the entire system, the WIMP, the nucleus, everything, in a box. This has the effect of making the space of states for the incoming and outgoing WIMP finite. We start by writing down Schrodingers equation for the free WIMP, without the interaction with the nucleus. The eigenstates of the time independent Schrodinger equation available to the WIMP are <span class="math notranslate nohighlight">\(\phi_n(\vec{x})\)</span> corresponding to energy eigenvalues <span class="math notranslate nohighlight">\(E_n\)</span> so that the time independent Schrodinger equation is <span class="math notranslate nohighlight">\(H_0\phi_n(\vec{x})=E_n\phi_n(x)\)</span>. The wave functions are the allowed momentum states for two particles, the WIMP and the nucleus, in a box. In the figure below the WIMP is in blue, the nucleus is in green. As in our hard sphere model we take the WIMP to be incoming from the left. Note that this picture shouldn’t be taken too seriously; in the quantum model the states corresponding to propagating particles are in fact momentum eigenstates that look more like plane waves than balls.</p>
+<p><img alt="before_after" src="../_images/before_after.pdf" /></p>
+<p>In the lab frame, the state corresponding to the initial state has the nucleus always at rest, but the basis of states also includes those representing the particles after collision, so the basis also includes all the states of constant momentum of each of the two particles. So in the above figure, A and B represent states that could be the initial state in the lab before the collision. C, D, J and L represent possible final states. The rest of the boxes contain states that, though they are members of the set of states that are solutions of the unperturbed Hamiltonian, they would play no part in a physical elastic collision process, either as an initial state or a final state.</p>
+<p>The states representing the WIMP and nuclear motion after the collision have both of them moving if a collision occurred. The different possible states in the box obey an orthonormality relation, so that</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \int\phi_m^*(\vec{x})\phi_n(\vec{x})\,d\vec{x}&amp;=\delta_{mn}
 \tag{3.1}
 \end{align}\]</div>
-<p>Now, following the usual method for perturbation theory, we modify the Hamiltonian to include the scattering nucleus. The new Hamiltonian is <span class="math notranslate nohighlight">\(H=H_0+V(\vec{x})\)</span>. We have assumed that the nucleus is static during the interaction, so that its potential <span class="math notranslate nohighlight">\(V(\vec{x})\)</span> is time independent. Of course, the nucleus recoils after the collision and moves, but we can approximate that there is no further interaction between the WIMP and the nucleus after the collision, and therefore this motion can be neglected for analysing the interaction.</p>
-<p>After the collision the state of the WIMP has changed to <span class="math notranslate nohighlight">\(\psi(x)\)</span>, but in perturbation theory this state is expressed as a superposition of the states of the unperturbed Hamiltonian.</p>
+<p>Now, following the usual method for perturbation theory, we modify the Hamiltonian to include the scattering nucleus. The new Hamiltonian is <span class="math notranslate nohighlight">\(H=H_0+V(\vec{x})\)</span>. The modified Schrodinger equation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-\psi(\vec{x})&amp;=\sum_n a_n(t)\phi_n(\vec{x})e^{-iE_n t/\hbar},
+(H_0+V(\vec{x}))\Psi(\vec{x},t)=i\hbar\frac{\partial\Psi(\vec{x},t)}{\partial t}.
 \tag{3.2}
+\end{align}\]</div>
+<p>After the collision the state of the WIMP has changed to <span class="math notranslate nohighlight">\(\psi(x)\)</span>, but in perturbation theory this state is expressed as a superposition of the states of the unperturbed Hamiltonian. Each of these states is an energy eigenstate, so each component state time evolves as a phase factor proportional to its energy.</p>
+<p><img alt="state space" src="../_images/unperturbed_states.pdf" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\Psi(\vec{x},t)&amp;=\sum_n a_n(t)\phi_n(\vec{x})e^{-iE_n t/\hbar},
+\tag{3.3}
 \end{align}\]</div>
 <p>where the <span class="math notranslate nohighlight">\(a_n\)</span> are complex coefficients of the different states in the superposition which in general can be time dependent. We substitute this back into the Schrodinger equation \ref{2.5} and obtain</p>
 <div class="math notranslate nohighlight">
@@ -325,14 +334,14 @@ document.write(`
 +\sum_n a_n(t)V(\vec{x})\psi_n(\vec{x})e^{-iE_nt/\hbar} \nonumber \\
 &amp;=i\hbar\sum_n\phi_n(\vec{x})e^{-iE_nt/\hbar}\frac{da_n}{dt}
 +i\hbar\sum_n\phi_n(\vec{x})a_n(t)\frac{-iE_n}{\hbar}a_n(t)e^{-iE_nt/\hbar}.
-\tag{3.3}
+\tag{3.4}
 \end{align}\end{split}\]</div>
 <p>Because <span class="math notranslate nohighlight">\(H_0\phi_n(\vec{x})=E_n\phi_n(\vec{x})\)</span>, the first and last terms cancel, leaving us with</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \sum_n a_n(t)V(\vec{x})\psi_n(\vec{x})e^{-iE_nt/\hbar}
 &amp;=i\hbar\sum_n\phi_n(\vec{x})e^{-iE_nt/\hbar}\frac{da_n}{dt}.
-\tag{3.4}
+\tag{3.5}
 \end{align}\]</div>
 <p>The next step is to multiply by <span class="math notranslate nohighlight">\(\phi_m^*(\vec{x})\)</span> and integrate over all space.</p>
 <div class="math notranslate nohighlight">
@@ -342,7 +351,7 @@ document.write(`
 \nonumber \\
 &amp;= i\hbar\sum_n \delta_{mn}e^{-iE_nt/\hbar}\frac{da_n}{dt} \nonumber \\
 &amp;= i\hbar\frac{da_m}{dt}e^{-iE_mt/\hbar}.
-\tag{3.5}
+\tag{3.6}
 \end{align}\end{split}\]</div>
 <p>Rearranging this equation, we arrive at</p>
 <div class="math notranslate nohighlight">
@@ -350,39 +359,39 @@ document.write(`
 \frac{da_m}{dt}&amp;=
 \frac{-i}{\hbar}\sum_n a_n(t)e^{i(E_m-E_n)t/\hbar}
 \int\phi_m^*(\vec{x})V(\vec{x})\phi_n(\vec{x})\,d^3x. 
-\tag{3.6}
+\tag{3.7}
 \end{align}\]</div>
 <p>Next we consider that, to first order in perturbation theory, the time rate of change of <span class="math notranslate nohighlight">\(a_m\)</span>, the coefficient of the mth wavefunction of the unperturbed hamiltonian in the wavefunction of the scattered wimp, will be dominated by one particular input wave function. We therefore denote the output wave function by <span class="math notranslate nohighlight">\(m=f\)</span>, for final, and the input wavefunction we take to be dominated by one particular <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(n=i\)</span>, for initial. The dominance of one particular term allows us to dispence with the sum, and set <span class="math notranslate nohighlight">\(a_i=1\)</span>. We therefore get</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \frac{da_f}{dt}&amp;=\frac{-i}{\hbar}
 e^{i(E_f-E_i)t/\hbar}\int\phi_f^*(\vec{x})V(\vec{x})\phi_i(\vec{x})\,d^3x
-\tag{3.7}
+\tag{3.8}
 \end{align}\]</div>
 <p>We interpret <span class="math notranslate nohighlight">\(da_f/dt\)</span> as the rate at which the amplitude for the final state wave function is accumulating during the scattering, as time evolves. The integral over space represents the quantum mechanics of the interaction between the WIMP and the nucleus. We shall denote this integral by <span class="math notranslate nohighlight">\(V_{fi}\)</span>. It is often called the matrix element for the process. We shall see that it has a bearing on the scattering probability.</p>
 <p>Our final piece of interpretation to interpret the integral of <span class="math notranslate nohighlight">\(da_f/dt\)</span>, which we call <span class="math notranslate nohighlight">\(a_{fi}\)</span>. It is a complex amplitude, and as usual in quantum mechanics its modulus squared is going to contribute to a probability. The interpretation is that it is proportional to the probability of the initial unscattered state <span class="math notranslate nohighlight">\(\phi_i\)</span> evolving to the particular final state <span class="math notranslate nohighlight">\(\phi_f\)</span> as a consequence of the action of the potential <span class="math notranslate nohighlight">\(V\vec{x}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 a_{fi}&amp;=\frac{-i}{\hbar}V_{fi}\int_{t=-\infty}^{+\infty}\,dt\,e^{i(E_f-E_i)t/\hbar}
-\tag{3.8}
+\tag{3.9}
 \end{align}\]</div>
 <p>We let <span class="math notranslate nohighlight">\(u=t/\hbar\)</span> so that <span class="math notranslate nohighlight">\(dt=\hbar du\)</span>, and this integral becomes</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-a_{fi}&amp;=\frac{-i}V_{fi}\int_{u=-\infty}^{+\infty}\,du\,e^{i(E_f-E_i)u}
-\tag{3.9}
+a_{fi}&amp;=\frac{-i}{\hbar}V_{fi}\int_{u=-\infty}^{+\infty}\,du\,e^{i(E_f-E_i)u}
+\tag{3.10}
 \end{align}\]</div>
 <p>The integral is an example of a Dirac delta that you were shown in second year when you studied Fourier transforms,</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \int_{u=-\infty}^{+\infty}\,du\,e^{i(E_f-E_i)u}&amp;=2\pi\delta(E_f-E_i). 
-\tag{3.10}
+\tag{3.11}
 \end{align}\]</div>
 <p>Applying this result we obtain an expression for <span class="math notranslate nohighlight">\(a_f\)</span> after the interaction has taken place,</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 a_{fi}=-2\pi i\delta(E_f-E_i)V_{fi}
-\tag{3.11}
+\tag{3.12}
 \end{align}\]</div>
 <p>The appearance of the Dirac delta in the energy enforces overall energy conservation - the final state (including the recoiling WIMP) must have the same total energy as the initial state. Because this is elastic scattering, the sum of the masses before and after the collision is also conserved, hence the total kinetic energy is also conserved in the collision, just as it was in the classical hard sphere model.</p>
 <p>It is not so easy to figure out the normalisation for this scattering amplitude. It is more fruitful to instead calculate <span class="math notranslate nohighlight">\(|a_{fi}|^2/T\)</span>, where <span class="math notranslate nohighlight">\(T\)</span> is the interaction time. This quantity has the units of a rate, and is called the rate for the conversion of WIMPs into this particular final state.</p>
@@ -393,7 +402,7 @@ R_{fi}=\frac{a_{fi}a_{fi}^*}{T}&amp;=\frac{2\pi}{\hbar}\frac{V_{fi}V_{fi}^*}{T}\
 \int_{t=-T/2}^{+T/2}\,dt\,e^{i(E_f-E_i)t/\hbar} \nonumber \\
 &amp;=\frac{2\pi}{\hbar}\frac{|V_{fi}|^2}{T}\delta(E_f-E_i)\int_{t=-T/2}^{+T/2}\,dt \nonumber \\
 &amp;=\frac{2\pi}{\hbar}|V_{fi}|^2\delta(E_f-E_i). 
-\tag{3.12}
+\tag{3.13}
 \end{align}\end{split}\]</div>
 <p>The physical meaning of this result, known as the Fermi golden rule, is as follows. <span class="math notranslate nohighlight">\(R_{fi}\)</span> is the rate of conversion of incoming WIMPs into this particular final state, which we take to be the WIMP and nucleus having undergone elastic scattering. The Dirac delta means that the process only has a non-zero rate if total energy, and hence kinetic energy, is conserved. If total energy is conserved, then the rate for this particular process is given by the modulus squared of the matrix element, <span class="math notranslate nohighlight">\(V_{fi}\)</span>. This matrix element contains the quantum physics of the interaction between the WIMP and the nucleus. Its detailed form is dependent on the exact physics behind the WIMP in question, but <span class="math notranslate nohighlight">\(V_{fi}\)</span> may be diagrammatically represented as below.</p>
 <p>Evaluation of these matrix elements turns out to have quite an important impact on the rate of WIMP nuclear elastic scattering, and is the first part of the connection between the WIMP nuclear and WIMP nucleon elastic scattering cross sections.</p>
