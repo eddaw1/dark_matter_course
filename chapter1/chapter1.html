@@ -317,15 +317,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-like-nature-of-wimps">Particle-like nature of WIMPs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-like-nature-of-axions">Wave-like nature of axions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-scattering-of-wimps">Elastic scattering of WIMPs</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-elastic-scattering">One-dimensional elastic scattering</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#three-dimensional-elastic-scattering">Three-dimensional elastic scattering</a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#detecting-wimp-nuclear-interactions">Detecting WIMP-nuclear interactions</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-like-nature-of-axions">Wave-like nature of axions</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +411,7 @@ document.write(`
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;V(x,y)&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;figures/PQ_QCD_potential.pdf&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -479,32 +472,13 @@ m_a\simeq m_\pi\,{\rm \frac{f_{QCD}}{f_{PQ}}}.
 </section>
 <section id="wave-like-nature-of-axions">
 <h3>Wave-like nature of axions<a class="headerlink" href="#wave-like-nature-of-axions" title="Permalink to this headline">#</a></h3>
-<section id="elastic-scattering-of-wimps">
-<h4>Elastic scattering of WIMPs<a class="headerlink" href="#elastic-scattering-of-wimps" title="Permalink to this headline">#</a></h4>
-<p>Since we don’t have a detailed model of the interactions of WIMPs, it pays to consider the simplest possible interactions that have the least possible dependence on any particular WIMP model. All fundamental particles studied so far interact at least some of the time via elastic scattering, in which the the interacting particles do not change species or generate new particles as a consequence of the interaction. Rather, they simply bounce off each other behaving rather like snooker balls colliding, though we must remember that subatomic particles are quantum entities and we will see that some quantum effects do have consequences even for simple low energy elastic scattering.</p>
-<p>We therefore hope that WIMPs also scatter inelastically, and consider how such scatters will affect the particle struck by the WIMP. Since we are doing elastic scattering, we can employ classical mechanics to analyse the elastic scattering of a WIMP off a particle from our detector, initially at rest in the lab. We start by modelling both the WIMP and the particle it scatters off as classical hard spheres. In this limit, the collision of a WIMP with a particle of the detector is fully deterministic, depending only on the masses of the WIMP and the particle it strikes, and the initial velocity of the WIMP.</p>
-<section id="one-dimensional-elastic-scattering">
-<h5>One-dimensional elastic scattering<a class="headerlink" href="#one-dimensional-elastic-scattering" title="Permalink to this headline">#</a></h5>
-<p>Though not realistic, treating the scattering as one-dimensional nonetheless allows us to learn a surprising amount about what we might expect from detectors.</p>
-</section>
-<section id="three-dimensional-elastic-scattering">
-<h5>Three-dimensional elastic scattering<a class="headerlink" href="#three-dimensional-elastic-scattering" title="Permalink to this headline">#</a></h5>
-</section>
-</section>
-<section id="detecting-wimp-nuclear-interactions">
-<h4>Detecting WIMP-nuclear interactions<a class="headerlink" href="#detecting-wimp-nuclear-interactions" title="Permalink to this headline">#</a></h4>
-<p>|
-The energy imparted to the detector when the WIMP interacts causes a variety of effects that should hopefully produce observable signatures in a well-designed detector. The detectable signature depends on the detector design, but briefly some observable signatures can result from the following:</p>
-<ul class="simple">
-<li><p>Ionisation of the atoms in the vicinity of the struck nucleus;</p></li>
-<li><p>Promotion of nearby atoms or molecules into excited nuclear, atomic or molecular states.</p></li>
-<li><p>Generation of phonons - quanta of lattice vibration in detectors designed to allow such excitations; or</p></li>
-<li><p>Phase transitions in detectors designed to operate close to a phase transition, such as superheated liquids.</p></li>
-</ul>
-<p>It is important to stress that these observable effects are the end point of a complex series of interactions seeded by the initial single interaction of a WIMP with something in the detector. We only consider single WIMP scatters simply because the probability, or cross section, for a WIMP to interact even once is miniscule. Multiple scatter events are so unlikely that if we see one we attribute it to background - the scattering of something that isn’t a WIMP, perhaps a neutron, in the detector.</p>
-<p>On this primary scatter, some energy is transferred to this struck ‘primary’ object, which then recoils into the surrounding detector material, distributing its energy amongst many systems. It is the collective effect of this recoil energy on a large number of atoms or molecules of the detector that is potentially observable. However, we must first work out how much energy is transfereed in the primary interaction of the WIMP, before seeing how that energy becomes detectable.</p>
-<p>#e particle it strikes, and the initial velocity of the WIMP.</p>
-</section>
+<p>Axions behave very differently. Bear in mind that the virial velocity is the same no matter what the dark matter is, so that the axions in our dark matter halo also have root mean square velocity <span class="math notranslate nohighlight">\(\rm v_0=230\,km\,s^{-1}\)</span>. The axion mass is small - let’s assume <span class="math notranslate nohighlight">\(\rm 13.6\,\mu eV\)</span>, the value we got for <span class="math notranslate nohighlight">\(\rm f_{PQ}=10^{12}\,GeV\)</span>. Repeating the same calculation, we find that</p>
+<div class="math notranslate nohighlight">
+\[pc=mvc=mc^2(v/c)={\rm (13.6\,\mu eV)}{\rm \frac{230\,km\,s^{-1}}{300000\,km\,s^{-1}}}=1\times 10^{-8}\,{\rm eV}\]</div>
+<div class="math notranslate nohighlight">
+\[\lambda=\frac{h}{p}=\frac{2\pi\hbar c}{pc}=\frac{\rm 6.3\times 0.2\,GeV\,fm}{1\times 10^{-17}\,{\rm GeV}}={\rm 126\,m}\]</div>
+<p>So, due to their small masses, and having the same root mean square velocity as WIMP dark matter, axion dark matter has a De Broglie wavelength that is significantly larger than detectors. We conclude that the experimental approach to searching for axions will not use individual kinematic collisiosn of axions with targets, but an entirely different method.</p>
+<p><img alt="lecture_1_summary" src="../_images/lecture_1_summary.png" /></p>
 </section>
 </section>
 </section>
@@ -592,15 +566,7 @@ The energy imparted to the detector when the WIMP interacts causes a variety of 
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-like-nature-of-wimps">Particle-like nature of WIMPs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-like-nature-of-axions">Wave-like nature of axions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-scattering-of-wimps">Elastic scattering of WIMPs</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-elastic-scattering">One-dimensional elastic scattering</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#three-dimensional-elastic-scattering">Three-dimensional elastic scattering</a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#detecting-wimp-nuclear-interactions">Detecting WIMP-nuclear interactions</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-like-nature-of-axions">Wave-like nature of axions</a></li>
 </ul>
 </li>
 </ul>
