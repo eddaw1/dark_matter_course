@@ -483,7 +483,7 @@ Substituting in this change of variables, and noting that the minus sign is abso
 and bottom limits, we obtain</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
-F(\vec{q})&amp;=\int_{\phi=0}^{2\pi}\,d\phi\int_{r=0}^\infty 
+F(k)&amp;=\int_{\phi=0}^{2\pi}\,d\phi\int_{r=0}^\infty 
 r^2V_0\delta(r-R)\,dr\,\int_{u=-1}^{+1} e^{ikru}\,du \\
 &amp;=\int_{\phi=0}^{2\pi}\,d\phi\int_{r=0}^\infty 
 r^2V_0\delta(r-R)\,dr\,\left[\frac{e^{ikru}}{ikr}\right]_{-1}^{+1} \\
@@ -554,9 +554,9 @@ F^2(E_R)&amp;= \frac{\sin^2(\frac{R\sqrt{2(m_Nc^2)E_R}}{\hbar c})}{\frac{2(m_Nc^
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Er (keV)&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="c1"># Make a second plot of the recoil energy probability density in the hard sphere scattering model.</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">perdist</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$p(E_r)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">perdist</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$p(E_r)&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Er (keV)&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(E_R)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(E_R) \,[keV^{-1}]$&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -569,11 +569,11 @@ F^2(E_R)&amp;= \frac{\sin^2(\frac{R\sqrt{2(m_Nc^2)E_R}}{\hbar c})}{\frac{2(m_Nc^
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ed.daw/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:20: RuntimeWarning: invalid value encountered in double_scalars
 </pre></div>
 </div>
-<img alt="../_images/895e13a843a00fdc8fe5db31981fadb36f6cfc46b91ade0810e96281cdf0850b.png" src="../_images/895e13a843a00fdc8fe5db31981fadb36f6cfc46b91ade0810e96281cdf0850b.png" />
+<img alt="../_images/06ac121cc09a200977f93e5d937fbf1e9a51216e63f5d4b7cc344f962f1dde0f.png" src="../_images/06ac121cc09a200977f93e5d937fbf1e9a51216e63f5d4b7cc344f962f1dde0f.png" />
 </div>
 </div>
 <p>The upper plot shows <span class="math notranslate nohighlight">\(F^2(E_R)\)</span> as a function of the nuclear recoil energy, <span class="math notranslate nohighlight">\(E_R\)</span>. This drops off rapidly with increasing <span class="math notranslate nohighlight">\(E_R\)</span>, so that the more momentum is transferred to the nucleus, the more the form factor suppresses the probability of the scattering.</p>
-<p>This is a big departure from the picture in the hard sphere scattering model, where the probability distribution for the recoil energy was flat up to the maximum value allowed by conservation of energy and momentum. The relative probablity density of recoil energy <span class="math notranslate nohighlight">\(E_R\)</span> in the hard sphere scattering model is shown in the lower plot, again as a function of <span class="math notranslate nohighlight">\(E_R\)</span>. The area under the orange curve is 1, as the integral of the probability density over all physically permitted values of E_R is 1; the recoil energy of the nucleus has to be something!</p>
+<p>This is a big departure from the picture in the hard sphere scattering model, where the probability distribution for the recoil energy was flat up to the maximum value allowed by conservation of energy and momentum. The relative probablity density of recoil energy <span class="math notranslate nohighlight">\(E_R\)</span> in the hard sphere scattering model is shown in the lower plot, again as a function of <span class="math notranslate nohighlight">\(E_R\)</span>. The area under the <span class="math notranslate nohighlight">\(p(E_R)\)</span> curve is 1, as the integral of the probability density over all physically permitted values of E_R is 1; the recoil energy of the nucleus has to be something!</p>
 <p>Furthermore, the function <span class="math notranslate nohighlight">\(\sin^2(qR)/(qR)^2={\rm sinc}^2(qR)\)</span> has minima at
 <span class="math notranslate nohighlight">\(qR=n\pi\)</span>. So, just as in a diffraction pattern of a plane wave off a slit, there will be zeros in the interference pattern, corresponding to recoil energies which the nucleus cannot acquire according to this model.</p>
 <p>More sophisticated form factor calculations also exhibit these zeros. We can plot the form factor in our crude model, and show some form factor calculations from publications that exhibit similar features.</p>
