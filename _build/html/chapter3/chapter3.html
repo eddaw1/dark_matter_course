@@ -478,16 +478,19 @@ and bottom limits, we obtain</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 F(\vec{q})&amp;=\int_{\phi=0}^{2\pi}\,d\phi\int_{r=0}^\infty 
-r^2V_0\delta(r-R)\,dr\,\hbar\int_{u=-1}^{+1} e^{iqu}\,du \\
+r^2V_0\delta(r-R)\,dr\,\hbar\int_{u=-1}^{+1} e^{iqRu}\,du \\
 &amp;=\int_{\phi=0}^{2\pi}\,d\phi\int_{r=0}^\infty 
-r^2V_0\delta(r-R)\,dr\,\hbar\left[\frac{e^{iqu}}{iq}\right]_{-1}^{+1} \\
+r^2V_0\delta(r-R)\,dr\,\hbar\left[\frac{e^{iqru}}{iqr}\right]_{-1}^{+1} \\
 &amp;=\int_{\phi=0}^{2\pi}\,d\phi\int_{r=0}^\infty 
-r^2V_0\delta(r-R)\,dr\,\frac{2\hbar}{q}\left(\frac{e^{iq}-e^{-iq}}{2i}\right) \\
+r^2V_0\delta(r-R)\,dr\,\frac{2\hbar}{qr}\left(\frac{e^{iqr}-e^{-iqr}}{2i}\right) \\
 &amp;=\int_{\phi=0}^{2\pi}\,d\phi\int_{r=0}^\infty 
-r^2V_0\delta(r-R)\,dr\,\frac{2\hbar\sin{q}}{q} \\
-&amp;=4\pi R^3 V_0\hbar\frac{\sin{qR}}{qR}
+r^2V_0\delta(r-R)\,dr\,\frac{2\hbar\sin{qr}}{qr} \\
+&amp;=4\pi R^3 V_0\hbar\frac{\sin{qR}}{qR},
 \tag{3.3}
 \end{align*}\end{split}\]</div>
+<p>where for the final step the Delta <span class="math notranslate nohighlight">\(\delta(r-R)\)</span> eliminates the integral over <span class="math notranslate nohighlight">\(r\)</span>, where <span class="math notranslate nohighlight">\(r\)</span> is equal to
+the nuclear radius <span class="math notranslate nohighlight">\(R\)</span>. Physically, in our model, scattering of the WIMP of the surface of the nucleus
+dominates.</p>
 <p>Equations 3.2 and 3.3 then get substituted into Equation 3.1 so that <span class="math notranslate nohighlight">\(a_{fi}\)</span>, the scattering amplitude to first order in perturbation theory, is given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{align*}
