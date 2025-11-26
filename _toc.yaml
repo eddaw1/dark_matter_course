@@ -7,3 +7,5 @@ chapters:
   title: Lecture 2
 - file: chapter3/chapter3.ipynb
   title: Lecture 3
+- file: chapter4/chapter4.ipynb
+  title: Lecture 4
