@@ -410,9 +410,9 @@ be brought outside the spatial integral,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 a_{fi}&amp;=\int\,dt\,e^{\frac{+iE_ft}{\hbar}}e^{\frac{-iE_it}{\hbar}}
- \int\,d^3\vec{r}\,e^{\frac{-i\vec{p_f}\cdot\vec{r}}{\hbar}}e^{\frac{+i\vec{p_w}\cdot\vec{r}}{\hbar}} \\
+ \int\,d^3\vec{r}\,V(\vec{r})\,e^{\frac{-i\vec{p_f}\cdot\vec{r}}{\hbar}}e^{\frac{+i\vec{p_w}\cdot\vec{r}}{\hbar}} \\
  &amp;=\int\,dt\,e^{\frac{+i(E_f-E_i)t}{\hbar}}
-\int\,d^3\vec{r}\,e^{\frac{-i(\vec{p_f}-\vec{p_i})\cdot\vec{r}}{\hbar}}
+\int\,d^3\vec{r}\,V(\vec{r})\,e^{\frac{-i(\vec{p_f}-\vec{p_i})\cdot\vec{r}}{\hbar}}
 \tag{3.1}
 \end{align*}\end{split}\]</div>
 </section>
@@ -547,14 +547,14 @@ F^2(E_R)&amp;= \frac{\sin^2(\frac{R\sqrt{2(m_Nc^2)E_R}}{\hbar c})}{\frac{2(m_Nc^
     <span class="n">acount</span><span class="o">+=</span><span class="mi">1</span>
 <span class="c1"># Make a plot of the nuclear form factor squared as a function of the recoil energy of a Xenon nucleus.</span>
 <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">fsq</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;|F(q)|^2&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">fsq</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|F(q)|^2$&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Form factor squared&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Er (keV)&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="c1"># Make a second plot of the recoil energy probability density in the hard sphere scattering model.</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">perdist</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$p(E_r)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">perdist</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$p(E_r)$&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Er (keV)&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(E_R) \,[keV^{-1}]$&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -569,7 +569,7 @@ F^2(E_R)&amp;= \frac{\sin^2(\frac{R\sqrt{2(m_Nc^2)E_R}}{\hbar c})}{\frac{2(m_Nc^
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ed.daw/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:20: RuntimeWarning: invalid value encountered in double_scalars
 </pre></div>
 </div>
-<img alt="../_images/06ac121cc09a200977f93e5d937fbf1e9a51216e63f5d4b7cc344f962f1dde0f.png" src="../_images/06ac121cc09a200977f93e5d937fbf1e9a51216e63f5d4b7cc344f962f1dde0f.png" />
+<img alt="../_images/95756de624f80079ac3611984aa6dc9f30e61349d01829869f3c0bc234412eec.png" src="../_images/95756de624f80079ac3611984aa6dc9f30e61349d01829869f3c0bc234412eec.png" />
 </div>
 </div>
 <p>The upper plot shows <span class="math notranslate nohighlight">\(F^2(E_R)\)</span> as a function of the nuclear recoil energy, <span class="math notranslate nohighlight">\(E_R\)</span>. This drops off rapidly with increasing <span class="math notranslate nohighlight">\(E_R\)</span>, so that the more momentum is transferred to the nucleus, the more the form factor suppresses the probability of the scattering.</p>
