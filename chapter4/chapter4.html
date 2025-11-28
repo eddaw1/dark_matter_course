@@ -307,6 +307,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-to-the-nucleon-cross-section">Converting to the nucleon cross section</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-distribution-of-wimps">Velocity distribution of WIMPs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dark-matter-rate-units-d-r-u">Dark matter Rate Units (D.R.U.)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-for-an-example-experiment">Results for an example experiment</a></li>
 </ul>
             </nav>
         </div>
@@ -441,9 +442,9 @@ p(v)=\frac{4\pi v^2}{\left(\pi v_0^2\right)^{\frac{3}{2}}}e^{-\frac{v^2}{v_0^2}}
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 \frac{d^2R}{dE_R\,dv_w}&amp;=
-P\times\frac{1}{v_w}\times
+Q\times\frac{1}{v_w}\times
 \frac{4\pi v_w^2}{\left(\pi v_0^2\right)^{\frac{3}{2}}}e^{-\frac{v_w^2}{v_0^2}} \\
-&amp;=P\times
+&amp;=Q\times
 \frac{4\pi}{\left(\pi v_0^2\right)^{\frac{3}{2}}}\times v_w e^{-\frac{v_w^2}{v_0^2}}
 \end{align*}\end{split}\]</div>
 <p>Now, this result is the differential rate for WIMP recoils at energy <span class="math notranslate nohighlight">\(E_R\)</span>, for a WIMP velocity <span class="math notranslate nohighlight">\(v_w\)</span>. We now want to sum up the contributions from all halo WIMPs that can potentially yield a recoil energy <span class="math notranslate nohighlight">\(E_R\)</span>. There will be a minimum velocity at which an incoming WIMP can cause a recoil of this energy. It’s the velocity at which a WIMP having a head on collision would give rise to that recoil energy. A head on collision of a WIMP having incoming velocity <span class="math notranslate nohighlight">\(v\)</span> results in a recoil energy <span class="math notranslate nohighlight">\(2\mu^2v^2/m_N\)</span>, so that the minimum velocity WIMP that can give a recoil energy <span class="math notranslate nohighlight">\(E_R\)</span> is</p>
@@ -454,7 +455,7 @@ v_{\rm min}=\sqrt{\frac{m_NE_R}{2\mu^2}}
 <p>The total differential rate, accounting for all WIMPs that could yield recoils of energy <span class="math notranslate nohighlight">\(E_R\)</span> is therefore given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
-\frac{dR}{dE_R}&amp;=P\times
+\frac{dR}{dE_R}&amp;=Q\times
 \frac{4\pi}{\left(\pi v_0^2\right)^{\frac{3}{2}}}\times
 \int_{v_{\rm min}}^\infty v_w e^{-\frac{v_w^2}{v_0^2}}\,dv_w \\
 &amp;=Q\times
@@ -466,7 +467,7 @@ v_{\rm min}=\sqrt{\frac{m_NE_R}{2\mu^2}}
 \frac{v_0^2}{2}e^{\frac{-v_{\rm min}^2}{v_0^2}} \\
 &amp;=\frac{2Q}{v_0\sqrt{\pi}}e^{\frac{-m_NE_R}{2\mu^2v_0^2}}.
 \end{align*}\end{split}\]</div>
-<p>We substitute in for <span class="math notranslate nohighlight">\(P\)</span> to obtain</p>
+<p>We substitute in for <span class="math notranslate nohighlight">\(Q\)</span> to obtain</p>
 <div class="math notranslate nohighlight">
 \[\begin{align*}
 \frac{dR}{dE_R}\,{\rm [GeV^{-1}s^{-1}]}&amp;=
@@ -502,6 +503,82 @@ rate unit, is events per kilogram of detector per keV, per day. The above rate i
 \exp\left(\frac{-m_NE_R}{2\mu^2\left(\frac{v_o}{c}\right)^2}\right)
 \tag{4.3}
 \end{align*}\]</div>
+</section>
+<section id="results-for-an-example-experiment">
+<h2>Results for an example experiment<a class="headerlink" href="#results-for-an-example-experiment" title="Permalink to this headline">#</a></h2>
+<p>In the PYTHON code below, I have plotted the differential event rate for a <span class="math notranslate nohighlight">\(\rm 1000\,kg\)</span> detector made of liquid Xenon, assuming a WIMP mass of <span class="math notranslate nohighlight">\(\rm 100\,GeV\)</span>. I have used Equation 4.3 multiplied by the detector mass. I have also plotted the total event rate, by adding differential event rates in each of the bins for my recoil energy array, and multiplied by 365 to get the total events in a year. You’ll see that if the WIMP mass were actually <span class="math notranslate nohighlight">\(\rm 100\,GeV\)</span>, and the WIMP-nucleon cross section were indeed <span class="math notranslate nohighlight">\(\rm 10^{-9}\,pb\)</span>, and the halo density really were <span class="math notranslate nohighlight">\(\rm 0.45\,GeV/cc\)</span>, you would have 10 events at the end of one year. Notice, however, that several of these events are below a recoil energy of <span class="math notranslate nohighlight">\(\rm 5\,keV\)</span>, rendering them difficult to detect given the reduced discrimination and increased level of backgrounds at low energies in realisitic detectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># recoil energy vector</span>
+<span class="n">er</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-9</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-6</span> <span class="c1"># in GeV</span>
+<span class="c1"># detector is xenon liquid, WIMP has 100GeV rest energy, halo density is 0.45GeV/cc</span>
+<span class="n">mn</span><span class="o">=</span><span class="mi">131</span>
+<span class="n">mw</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">rho</span><span class="o">=</span><span class="mf">0.45</span>
+<span class="c1"># calculate effective mass, halo virial velocity, speed of light in km/s, hbar*c in GeV*fm units</span>
+<span class="n">mu</span><span class="o">=</span><span class="p">(</span><span class="n">mn</span><span class="o">*</span><span class="n">mw</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">mn</span><span class="o">+</span><span class="n">mw</span><span class="p">)</span>
+<span class="n">v0</span><span class="o">=</span><span class="mi">230</span>
+<span class="n">c</span><span class="o">=</span><span class="mi">300000</span>
+<span class="n">hbarc</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="n">R</span><span class="o">=</span><span class="mf">6.1</span>
+<span class="n">A</span><span class="o">=</span><span class="n">mn</span>
+<span class="c1"># assume cross section is 1e-9 pb</span>
+<span class="n">sigma</span><span class="o">=</span><span class="mf">1e-9</span>
+<span class="c1"># assume a detector mass of 1000 kg</span>
+<span class="n">M_D</span><span class="o">=</span><span class="mi">1000</span>
+<span class="c1"># loop over recoil energies</span>
+<span class="n">dRbydE</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+<span class="n">fsquared</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+<span class="n">Rtot</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+<span class="n">ecount</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">der</span><span class="o">=</span><span class="n">er</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">er</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;der=&quot;</span><span class="p">,</span><span class="n">der</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">er</span><span class="p">:</span>
+    <span class="n">fsquared</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mn</span><span class="o">*</span><span class="n">e</span><span class="p">)</span><span class="o">/</span><span class="n">hbarc</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mn</span><span class="o">*</span><span class="n">e</span><span class="p">)</span><span class="o">/</span><span class="n">hbarc</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mn</span><span class="o">*</span><span class="n">e</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">R</span><span class="o">/</span><span class="n">hbarc</span><span class="o">/</span><span class="n">hbarc</span><span class="p">)</span>
+    <span class="n">dRbydE</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">=</span><span class="n">M_D</span><span class="o">*</span><span class="mf">0.87</span><span class="o">*</span><span class="n">fsquared</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">sigma</span><span class="o">*</span><span class="n">rho</span><span class="o">*</span><span class="n">mn</span><span class="o">/</span> <span class="p">(</span><span class="n">mu</span><span class="o">*</span><span class="n">mu</span><span class="o">*</span><span class="n">mw</span><span class="o">*</span><span class="p">(</span><span class="n">v0</span><span class="o">/</span><span class="n">c</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mn</span><span class="o">*</span><span class="n">e</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mu</span><span class="o">*</span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="n">v0</span><span class="o">*</span><span class="n">v0</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">c</span><span class="p">))))</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">ecount</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">Rtot</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">=</span><span class="n">Rtot</span><span class="p">[</span><span class="n">ecount</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">dRbydE</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">*</span><span class="n">der</span><span class="o">*</span><span class="mf">1e+6</span><span class="o">*</span><span class="mi">365</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Rtot</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">=</span><span class="n">dRbydE</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">*</span><span class="n">der</span><span class="o">*</span><span class="mf">1e+6</span><span class="o">*</span><span class="mi">365</span>
+    <span class="n">ecount</span><span class="o">+=</span><span class="mi">1</span>
+<span class="c1"># plot the differential rate</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+    <span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;font.sans-serif&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;legend.fontsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;figure.titlesize&#39;</span><span class="p">:</span> <span class="mi">14</span>
+<span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">dRbydE</span><span class="p">,</span> <span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="n">er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">Rtot</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Recoil Energy (keV)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Differential Rate (events/day/keV), Cumulative Rate (events/year)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Differential Rate (DRU)&#39;</span><span class="p">,</span> <span class="s1">&#39;Cumulative Rate (events/year)&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">12.8</span><span class="p">,</span> <span class="mf">12.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>der= 3.0003000299029903e-09
+</pre></div>
+</div>
+<img alt="../_images/8880d15e947b1ae1369efa59323cb9f39f6cb1111f7e0b2f76f798ef669ae4b2.png" src="../_images/8880d15e947b1ae1369efa59323cb9f39f6cb1111f7e0b2f76f798ef669ae4b2.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -569,6 +646,7 @@ rate unit, is events per kilogram of detector per keV, per day. The above rate i
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-to-the-nucleon-cross-section">Converting to the nucleon cross section</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-distribution-of-wimps">Velocity distribution of WIMPs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dark-matter-rate-units-d-r-u">Dark matter Rate Units (D.R.U.)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-for-an-example-experiment">Results for an example experiment</a></li>
 </ul>
   </nav></div>
 
