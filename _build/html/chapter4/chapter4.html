@@ -1,0 +1,703 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Differential rate for WIMP scattering &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4/chapter4';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Lecture 3 - Quantum analysis of WIMP nucleus scattering" href="../chapter3/chapter3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../dark_matter_detection.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../dark_matter_detection.html">
+                    Dark matter candidates and detectors
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Lecture 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/chapter2.html">Lecture 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/chapter3.html">Lecture 3</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 4</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter4/chapter4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Differential rate for WIMP scattering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-of-the-rate-formula">Units of the rate formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-rate">Differential rate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporating-the-nuclear-structure-function">Incorporating the nuclear structure function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-to-the-nucleon-cross-section">Converting to the nucleon cross section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-distribution-of-wimps">Velocity distribution of WIMPs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dark-matter-rate-units-d-r-u">Dark matter Rate Units (D.R.U.)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-for-an-example-experiment">Results for an example experiment</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="differential-rate-for-wimp-scattering">
+<h1>Differential rate for WIMP scattering<a class="headerlink" href="#differential-rate-for-wimp-scattering" title="Permalink to this headline">#</a></h1>
+<p>In the first two lectures we learned some inputs that feed into the rate at which WIMPs might cause energy depositions in a detector. What we are after is a prediction for the following question: If we have a detector that is sensitive to elastic collisions of WIMPs, giving rise to nuclear recoils in the energy range <span class="math notranslate nohighlight">\(E_R\)</span> to <span class="math notranslate nohighlight">\(E_R+\Delta E_R\)</span>, how often will we detect such a recoil?</p>
+<p>The first part of answering this question was at the start of Lecture 2. We showed that the total rate at which WIMPs of velocity <span class="math notranslate nohighlight">\(v_w\)</span> scatter off nuclei in a detector of mass <span class="math notranslate nohighlight">\(M\)</span> consisting of nuclei of atomic mass <span class="math notranslate nohighlight">\(A\)</span> atomic mass units, with a cross section for elastic scattering of a WIMP off a nucleus given by <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}\)</span>, and a number density of WIMPs <span class="math notranslate nohighlight">\(n\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+R_{\rm TOT}(v)&amp;=\frac{1000MN_A\sigma_{\rm NUC}nv_w}{A}.
+\tag{2.4}
+\end{align}\]</div>
+<section id="units-of-the-rate-formula">
+<h2>Units of the rate formula<a class="headerlink" href="#units-of-the-rate-formula" title="Permalink to this headline">#</a></h2>
+<p>We are going to need to think about the units of things. Let me split the formula up into pieces and consider what units things naturally occur in.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+R_{\rm TOT}(v_w)&amp;=\left(\frac{1000M_DN_A}{A}\right)\sigma_{\rm NUC}nv_w.
+\tag{2.4}
+\end{align}\]</div>
+<p>The quantity in brackets is the number of nuclei in the detector, where <span class="math notranslate nohighlight">\(M_D\)</span> is the detector mass in kilograms, so <span class="math notranslate nohighlight">\(1000M_D\)</span> is the detector mass in grams, and <span class="math notranslate nohighlight">\(A\)</span> is the mass of a mole of the detector, also in grams, so that <span class="math notranslate nohighlight">\(1000M_D/A\)</span> is the number of moles of material in the detector, and <span class="math notranslate nohighlight">\(N_A\)</span> is the number of atoms per mole. Overall the quantity in brackets is a number of atoms in the detector, so it is dimensionless.</p>
+<p>The remaining quantities, <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}\)</span>, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(v_w\)</span> have units <span class="math notranslate nohighlight">\(\rm L^2\)</span>, <span class="math notranslate nohighlight">\(L^{-3}\)</span> and <span class="math notranslate nohighlight">\(L\,T^{-1}\)</span>, where as usual <span class="math notranslate nohighlight">\(\rm L\)</span> is length, <span class="math notranslate nohighlight">\(\rm T\)</span> is time and <span class="math notranslate nohighlight">\(\rm M\)</span> is mass. Their product therefore has dimensions <span class="math notranslate nohighlight">\(T^{-1}\)</span>, and this is the overall dimensions of the rate. This is correct, because the formula represents the number of decays per unit time. If all these three quantities are given in SI units, <span class="math notranslate nohighlight">\(R_{\rm TOT}(v_w)\)</span> will be per second, units <span class="math notranslate nohighlight">\(\rm s^{-1}\)</span>.</p>
+<p>The cross section here is the effective area of a single nucleus for elastic scattering. It’s SI units are square meters. In fact, this quantity is usually given in picobarns, abbreviated <span class="math notranslate nohighlight">\(\rm pb\)</span>. One barn is <span class="math notranslate nohighlight">\(\rm 10^{-28}\,m^2\)</span>, so that <span class="math notranslate nohighlight">\(\rm 1\,pb\)</span> is <span class="math notranslate nohighlight">\(10^{-12}\)</span> barns, and hence one picobarn is <span class="math notranslate nohighlight">\(\rm 10^{-40}\,m^2\)</span>. So, if we want experimentalists to use this result, we need to allow them to enter the cross section in their familiar unit of picobarns. We can write <span class="math notranslate nohighlight">\(\sigma_{\rm NUC} = 10^{-40}\sigma^{\rm pb}_{\rm NUC}\)</span>. Therefore the rate formula becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+R_{\rm TOT}(v_w)&amp;=\left(\frac{1000M_DN_A}{A}\right)\left(10^{-40}\sigma^{\rm pb}_{\rm NUC}\right)nv_w.
+\tag{2.4}
+\end{align}\]</div>
+<p>The <span class="math notranslate nohighlight">\(n\)</span> is the number density of WIMPs in a population with velocity <span class="math notranslate nohighlight">\(v_w\)</span>, and its SI unit is therefore count per cubic metre. Now, astrophysicists talk about the dark matter as having a halo density in <span class="math notranslate nohighlight">\(\rm GeV/cc\)</span>. What this means is, the rest energy in a cubic centimetre of dark matter. So, suppose the WIMPs have a rest mass <span class="math notranslate nohighlight">\(\rm m_w\)</span>. If there are <span class="math notranslate nohighlight">\(n\)</span> WIMPs per cubic metre, then there are <span class="math notranslate nohighlight">\(10^{-6}n\)</span> WIMPs per cubic centimetre. The rest energy per cubic centimetre is then <span class="math notranslate nohighlight">\(10^{-6}nm_wc^2\)</span>. This is usually given the symbol <span class="math notranslate nohighlight">\(\rho_{\rm H}\)</span>. So, if <span class="math notranslate nohighlight">\(\rho_{\rm H}=10^{-6}nm_wc^2\)</span> then <span class="math notranslate nohighlight">\(n=10^6\rho_H/(m_wc^2)\)</span>. Here it is understood that <span class="math notranslate nohighlight">\(\rho_{\rm H}\)</span> is in <span class="math notranslate nohighlight">\(\rm GeV/cc\)</span>, following the standard astrophysics convention, and <span class="math notranslate nohighlight">\(m_wc^2\)</span> is in <span class="math notranslate nohighlight">\(\rm GeV\)</span>.</p>
+<p>We write the rate equation once again, making it clear what units everything is in by using square brackets with the correct units for the quantity to the left of them. The rate formula is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+R_{\rm TOT}(v_w) [s^{-1}]=\left(\frac{1000\,M_D\,{\rm [kg]}\,N_A}{A}\right)\left(10^{-40}\sigma_{\rm NUC}\,{\rm [pb]}\,\right)
+\left(\frac{10^6\rho_{\rm H}\,{\rm [GeV/cc]}}{(m_wc^2)\,{\rm [GeV]}}\right)\,v_w\,{\rm [ms^{-1}]}.
+\end{align*}\]</div>
+<p>Now we explicitly understand the units required for all the quantities, we can strip out the brackets and combine all the numerical factors into one, obtaining</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+R_{\rm TOT}(v_w) [s^{-1}]=\frac{10^{-31}\,M_D\,{\rm [kg]}\,N_A\,\sigma_{\rm NUC}\,{\rm [pb]}\,\rho_{\rm H}\,{\rm [GeV/cc]}\,v_w\,{\rm [ms^{-1}]}}
+{A\,(m_wc^2)\,[\rm GeV]}
+\tag{4.1}
+\end{align*}\]</div>
+</section>
+<section id="differential-rate">
+<h2>Differential rate<a class="headerlink" href="#differential-rate" title="Permalink to this headline">#</a></h2>
+<p>The total interaction rate <span class="math notranslate nohighlight">\(R_{\rm TOT}\)</span> is the total number of times per second that our population of WIMPs, all having velocity <span class="math notranslate nohighlight">\(v_w\)</span>, undergo elastic collisions with nuclei. Given that those collisions occur, in the hard sphere model where we ignore interference effects and the nuclear structure function, the probability density for the recoil energy is a rectangle, with a uniform density up to an energy of <span class="math notranslate nohighlight">\(2\mu^2m_w^2/m_N\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+p(E_R)=\left\{\begin{array}{c}
+\frac{m_N}{2\mu^2v_w^2} &amp; E_R\le\frac{2\mu^2v_w^2}{m_N} \\
+0 &amp; E_R &gt;\frac{2\mu^2v_w^2}{m_N}\end{array}\right.
+\end{align*}\end{split}\]</div>
+<p>Once again, we must consider units. We notice that if we insert a <span class="math notranslate nohighlight">\(c^2\)</span> by every mass and a <span class="math notranslate nohighlight">\(1/c^2\)</span> for every <span class="math notranslate nohighlight">\(v_w^2\)</span> then the number of inserted factors of <span class="math notranslate nohighlight">\(c\)</span> in the numerator and denominator in each expression is the same. The probability density for recoil becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+p(E_R)=\left\{\begin{array}{c}
+\frac{(m_Nc^2)}{2(\mu c^2)^2\frac{v_w^2}{c^2}} &amp; E_R\le\frac{2(\mu c^2)^2\frac{v_w^2}{c^2}}{m_Nc^2} \\
+0 &amp; E_R &gt;\frac{2(\mu c^2)^2\frac{v_w^2}{c^2}}{m_Nc^2}\end{array}\right.
+\end{align*}\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\mu c^2\)</span>, and <span class="math notranslate nohighlight">\(m_N c^2\)</span> is given in <span class="math notranslate nohighlight">\(\rm GeV\)</span>, then the upper limit energy is in <span class="math notranslate nohighlight">\(\rm GeV\)</span>, and the probability density, the height of the rectangle, is
+in <span class="math notranslate nohighlight">\(\rm GeV^{-1}\)</span>.</p>
+<p>This leads to the differential rate in the hard sphere model. We multiply the total rate from Equation 4.1 by the probability densith <span class="math notranslate nohighlight">\(p(E_R)\)</span> above, obtaining</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\frac{dR^{\rm HS}}{dE_R}(v_w)\,{\rm [GeV^{-1}s^{-1}]}=R_{\rm TOT}(v_w)\times 
+\frac{(m_Nc^2)\,{\rm [GeV]}}{2(\mu c^2\,{\rm [GeV]})^2\frac{v_w^2}{c^2}}
+\end{align*}\]</div>
+<p>Again, we are careful to specify the units expected for each quantity appearing in the formula. The label <span class="math notranslate nohighlight">\(\rm HS\)</span> stands for hard sphere, and is there because we have not yet accounted for the nuclear structure function. The name differential rate is appropriate because if we integrate the differential rate over all accessible recoil energies, we recover the total rate,</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\int_{E_R=0}^{E_R^{\rm MAX}}\,\frac{dR^{\rm HS}}{dE_R}\,dE_R = R_{\rm TOT}.
+\end{align*}\]</div>
+<p>The differential rate is used if you want to know how often you’ll see a nuclear recoil with energy in the range <span class="math notranslate nohighlight">\(E_R\)</span> to <span class="math notranslate nohighlight">\(E_R+\Delta E_R\)</span>. You multiply <span class="math notranslate nohighlight">\(dR/dE_R\)</span> at that energy by the energy range <span class="math notranslate nohighlight">\(\Delta E_R\)</span>, and the result is the rate of nuclear recoils in that energy range.</p>
+</section>
+<section id="incorporating-the-nuclear-structure-function">
+<h2>Incorporating the nuclear structure function<a class="headerlink" href="#incorporating-the-nuclear-structure-function" title="Permalink to this headline">#</a></h2>
+<p>In lecture 3, we learned also that this rate gets depleted because of the structure function of the nucleus, <span class="math notranslate nohighlight">\(F^2(E_R)\)</span>, depletes the rate of nuclear recoils at larger values of recoil energy <span class="math notranslate nohighlight">\(E_R\)</span> relative to the rate at zero recoil energy, by a factor given by Equation 3.4.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+F^2(E_R)&amp;= \frac{\sin^2(\frac{R\sqrt{2(m_Nc^2)E_R}}{\hbar c})}{\frac{2(m_Nc^2)E_RR^2}{(\hbar c)^2}},
+\tag{3.4}
+\end{align*}\]</div>
+<p>We therefore multiply together these three results to give us an estimate of the differential rate of nuclear recoils that would arise from a dark matter halo where all the dark matter particles have velocity <span class="math notranslate nohighlight">\(v_w\)</span>. This estimate is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{dR}{dE_R}(v_w)\,{\rm [GeV^{-1}s^{-1}]}&amp;=R_{\rm TOT}(v_w)\times 
+F^2(E_R)\times\frac{(m_Nc^2)\,{\rm [GeV]}}{2(\mu c^2\,{\rm [GeV]})^2\frac{v_w^2}{c^2}}\\
+&amp;=\frac{10^{-31}\,M_D\,{\rm [kg]}\,N_A\,F^2(E_R)\,\sigma_{\rm NUC}\,{\rm [pb]}\,
+\rho_{\rm H}\,{\rm [GeV/cc]}\,(m_nc^2)\,{\rm [GeV]}\,v_w\,{\rm [ms^{-1}]}}
+{2A\,(m_wc^2)\,[\rm GeV]\,(\mu c^2\,{\rm [GeV]})^2\frac{v_w^2}{c^2}}
+\end{align*}\end{split}\]</div>
+</section>
+<section id="converting-to-the-nucleon-cross-section">
+<h2>Converting to the nucleon cross section<a class="headerlink" href="#converting-to-the-nucleon-cross-section" title="Permalink to this headline">#</a></h2>
+<p>So far we have been regarding the scattering entity as the entire nucleus, and writing the cross section for the entire nucleus scattering as <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}\)</span>. However, in dark matter physics, the quantity that is usually used to represent the cross section is the elastic cross section for the scattering of WIMPs off individual nucleons, protons or neutrons. This quantity <span class="math notranslate nohighlight">\(\sigma_N\)</span> is nominally the same for neutrons and protons, since they are effectively equivalent when it comes to the weak interactions underlying the scattering process.</p>
+<p>The naive answer is that each nucleus contains A nucleons, therefore <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}^{\rm Naive}=A\sigma_N\)</span>. However, this supposes that the nucleons in the nucleus are all independent of each other. In fact, this is not true, in two senses. First, they act coherently with regards to the interaction itself. Second, when the interaction has taken place, the entire nucleus recoils, not just a single nucleon.</p>
+<p>In terms of coherence of the interaction, if we assume the amplitude for scattering off one nucleon is <span class="math notranslate nohighlight">\(\psi\)</span>, then if the nucleons were independent, the probability of scattering off the whole nucleus would be the sum of the probabities for each nucleon, <span class="math notranslate nohighlight">\(P=|\psi|^2+|\psi|^s+\cdots{\rm (A\,terms)}\cdots+|\psi|^2=A|\psi|^2\)</span>. However, if the scattering processes off each of the nucleons are all coherent, then <span class="math notranslate nohighlight">\(P=|\psi+\psi+\cdots{\rm (A\,terms)}\cdots+\psi|^2=A^2|\psi|^2\)</span>. So, the coherent scattering case has a factor of <span class="math notranslate nohighlight">\(A\)</span> larger cross section than the incoherent scattering case.</p>
+<p>For the whole nucleus recoiling, we are considering a recoil at a given recoil energy <span class="math notranslate nohighlight">\(E_R\)</span>. If this is considered constant, but we compare a nucleon recoiling to a nucleus recoiling, how do the underlying quantities change? The mass of the recoiling object increases by a factor of <span class="math notranslate nohighlight">\(A\)</span>. If <span class="math notranslate nohighlight">\(E_R=p^2/2m\)</span>, then for <span class="math notranslate nohighlight">\(E_R\)</span> to remain the same, <span class="math notranslate nohighlight">\(p^2\)</span> must also increase by a factor of <span class="math notranslate nohighlight">\(A\)</span>, hence <span class="math notranslate nohighlight">\(p\)</span> increases by a factor of <span class="math notranslate nohighlight">\(\sqrt{A}\)</span>. If we focus on recoil energies in a range <span class="math notranslate nohighlight">\(E_R\)</span> to <span class="math notranslate nohighlight">\(E_R+dE_R\)</span>, the number of ways the nucleus can recoil with this energy is called the density of final states, <span class="math notranslate nohighlight">\(dN/dE_R\)</span>. This quantity can be written <span class="math notranslate nohighlight">\(dN/dp\)</span> times <span class="math notranslate nohighlight">\(dp/dE_R\)</span>. The quantity <span class="math notranslate nohighlight">\(dN/dp\)</span> is given by the circumference of a circle of radius <span class="math notranslate nohighlight">\(p\)</span>, since the radius scales with the momentum. The quantity <span class="math notranslate nohighlight">\(dp/dE_R\)</span> is <span class="math notranslate nohighlight">\(1/(dE_R/dp)\)</span>. When
+<span class="math notranslate nohighlight">\(E_R=p^2/(2m)\)</span>, we have <span class="math notranslate nohighlight">\(dE_R/dp=p/m\)</span>, so <span class="math notranslate nohighlight">\(dp/dE_R =m/p\)</span>. Therefore <span class="math notranslate nohighlight">\(dN/dE_R\)</span> scales as <span class="math notranslate nohighlight">\(p\times(m/p)\)</span>, which is <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>Consequently, if the entire nucleus recoils, the mass of the recoiling entitiy scales up from <span class="math notranslate nohighlight">\(m\)</span> to <span class="math notranslate nohighlight">\(Am\)</span>, and hence the number of final states in an energy range <span class="math notranslate nohighlight">\(E_R\)</span> to <span class="math notranslate nohighlight">\(E_R+dE_R\)</span> is a factor of <span class="math notranslate nohighlight">\(A\)</span> greater in the case of the whole nucleus recoiling, compared to the case of a single nucleon recoiling.</p>
+<p>Summarising, at fixed recoil energy <span class="math notranslate nohighlight">\(E_R\)</span>, in addition to the naive factor of <span class="math notranslate nohighlight">\(A\)</span> from there being <span class="math notranslate nohighlight">\(A\)</span> nucleons in the nuclus, the cross section for elastic scattering off a nucleus is greater enhanced with respect to elastic scattering off its individual nucleons by two further factors of <span class="math notranslate nohighlight">\(A\)</span>, one arising from coherence between scattering processes off nucleons in the nucleus, and the other arising from the number of available final states for the whole nucleus recoiling compared to the case of a single nucleus recoiling.</p>
+<p>Overall, <span class="math notranslate nohighlight">\(\sigma_{\rm NUC}=A^3\sigma_N\)</span>. We therefore re-write the rate formula in terms of the WIMP-nucleon scattering cross section.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{dR}{dE_R}(v_w)\,{\rm [GeV^{-1}s^{-1}]}&amp;=
+\frac{10^{-31}\,M_D\,{\rm [kg]}\,N_A\,F^2(E_R)\,A^2\sigma_{\rm N}\,{\rm [pb]}\,
+\rho_{\rm H}\,{\rm [GeV/cc]}\,(m_nc^2)\,{\rm [GeV]}\,v_w\,{\rm [ms^{-1}]}}
+{2\,(m_wc^2)\,[\rm GeV]\,(\mu c^2\,{\rm [GeV]})^2\frac{v_w^2}{c^2}} \\
+&amp;=\frac{10^{-31}c^2\,M_D\,{\rm [kg]}\,N_A\,F^2(E_R)\,A^2\sigma_{\rm N}\,{\rm [pb]}\,
+\rho_{\rm H}\,{\rm [GeV/cc]}\,(m_nc^2)\,{\rm [GeV]}}
+{2\,(m_wc^2)\,{\rm [GeV]}\,(\mu c^2\,{\rm [GeV]})^2\,v_w\,{\rm [ms^{-1}]}} \\
+&amp;=Q\times\frac{1}{v_w}
+\end{align*}\end{split}\]</div>
+<p>In the final line we have cancelled a factor of <span class="math notranslate nohighlight">\(v_w\)</span>, and moved the <span class="math notranslate nohighlight">\(c^2\)</span> that was underneath <span class="math notranslate nohighlight">\(v_w^2\)</span> in the denominator to the numerator. I have also hidden everything but the remaining factor of <span class="math notranslate nohighlight">\(1/v_w\)</span> in a factor <span class="math notranslate nohighlight">\(Q\)</span>, in preparation for discussion of the velocity distribution.</p>
+</section>
+<section id="velocity-distribution-of-wimps">
+<h2>Velocity distribution of WIMPs<a class="headerlink" href="#velocity-distribution-of-wimps" title="Permalink to this headline">#</a></h2>
+<p>This differential rate assumes that all the WIMPs have the same velocity <span class="math notranslate nohighlight">\(v_w\)</span> when they strike the nucleus. In fact, as Vik taught you, the dark matter is thermalised in the gravitational potential of the galaxy. This means that the probability density for the WIMP velocity, which we call <span class="math notranslate nohighlight">\(p(v)\)</span> is the Maxwell Bolzmann distribution which you will have encountered in statistical mechanics. The Maxwell Bolzmann distribution of velocities is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+p(v)=\frac{4\pi v^2}{\left(\pi v_0^2\right)^{\frac{3}{2}}}e^{-\frac{v^2}{v_0^2}},
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(v_0\)</span> is the virial velocity of <span class="math notranslate nohighlight">\(\rm 230\,km\,s^{-1}\)</span>. This leads to a double-differential-rate, <span class="math notranslate nohighlight">\(d^2R/dE_R\,dv_w\)</span>. The meaning of this is that if we consider only WIMPs in the velocity range <span class="math notranslate nohighlight">\(v_w\)</span> to <span class="math notranslate nohighlight">\(v_w+dv_w\)</span>, then the rate of recoils with energy in the range <span class="math notranslate nohighlight">\(E_R\)</span> to <span class="math notranslate nohighlight">\(E_R+dE_R\)</span> is given by <span class="math notranslate nohighlight">\(\frac{d^2R}{dE_R\,dv_w}dE_R\,dv_w\)</span>. The double differential rate is the product of the Maxwell Bolzmann distribution factor and the diffential rate <span class="math notranslate nohighlight">\(dR/dE_R\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{d^2R}{dE_R\,dv_w}&amp;=
+Q\times\frac{1}{v_w}\times
+\frac{4\pi v_w^2}{\left(\pi v_0^2\right)^{\frac{3}{2}}}e^{-\frac{v_w^2}{v_0^2}} \\
+&amp;=Q\times
+\frac{4\pi}{\left(\pi v_0^2\right)^{\frac{3}{2}}}\times v_w e^{-\frac{v_w^2}{v_0^2}}
+\end{align*}\end{split}\]</div>
+<p>Now, this result is the differential rate for WIMP recoils at energy <span class="math notranslate nohighlight">\(E_R\)</span>, for a WIMP velocity <span class="math notranslate nohighlight">\(v_w\)</span>. We now want to sum up the contributions from all halo WIMPs that can potentially yield a recoil energy <span class="math notranslate nohighlight">\(E_R\)</span>. There will be a minimum velocity at which an incoming WIMP can cause a recoil of this energy. It’s the velocity at which a WIMP having a head on collision would give rise to that recoil energy. A head on collision of a WIMP having incoming velocity <span class="math notranslate nohighlight">\(v\)</span> results in a recoil energy <span class="math notranslate nohighlight">\(2\mu^2v^2/m_N\)</span>, so that the minimum velocity WIMP that can give a recoil energy <span class="math notranslate nohighlight">\(E_R\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+v_{\rm min}=\sqrt{\frac{m_NE_R}{2\mu^2}}
+\end{align*}\]</div>
+<p>The total differential rate, accounting for all WIMPs that could yield recoils of energy <span class="math notranslate nohighlight">\(E_R\)</span> is therefore given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{dR}{dE_R}&amp;=Q\times
+\frac{4\pi}{\left(\pi v_0^2\right)^{\frac{3}{2}}}\times
+\int_{v_{\rm min}}^\infty v_w e^{-\frac{v_w^2}{v_0^2}}\,dv_w \\
+&amp;=Q\times
+\frac{4\pi}{\left(\pi v_0^2\right)^{\frac{3}{2}}}\times
+\left[ \frac{-v_0^2}{2}e^{-\frac{v_w^2}{v_0^2}} 
+\right]_{v_{\rm min}}^\infty \\
+&amp;=Q\times
+\frac{4\pi}{\left(\pi v_0^2\right)^{\frac{3}{2}}}\times
+\frac{v_0^2}{2}e^{\frac{-v_{\rm min}^2}{v_0^2}} \\
+&amp;=\frac{2Q}{v_0\sqrt{\pi}}e^{\frac{-m_NE_R}{2\mu^2v_0^2}}.
+\end{align*}\end{split}\]</div>
+<p>We substitute in for <span class="math notranslate nohighlight">\(Q\)</span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\frac{dR}{dE_R}\,{\rm [GeV^{-1}s^{-1}]}&amp;=
+\frac{10^{-31}c\,M_D\,{\rm [kg]}\,N_A\,F^2(E_R)\,A^2\sigma_{\rm N}\,{\rm [pb]}\,
+\rho_{\rm H}\,{\rm [GeV/cc]}\,(m_nc^2)\,{\rm [GeV]}}
+{(m_wc^2)\,{\rm [GeV]}\,(\mu c^2\,{\rm [GeV]})^2\sqrt{\pi}\,\left(\frac{v_0}{c}\right)}
+\times\exp\left(\frac{-(m_Nc^2)\,{\rm [GeV]\,E_R\,{\rm [GeV]}}}{2(\mu c^2\,{\rm [GeV]})^2\left(\frac{v_0^2}{c^2}\right)}\right).
+\end{align*}\]</div>
+</section>
+<section id="dark-matter-rate-units-d-r-u">
+<h2>Dark matter Rate Units (D.R.U.)<a class="headerlink" href="#dark-matter-rate-units-d-r-u" title="Permalink to this headline">#</a></h2>
+<p>Once again, the experimentalists have invented their own units that reflect the realities of the lab. The D.R.U., or dark matter
+rate unit, is events per kilogram of detector per keV, per day. The above rate is per second, so needs multiplying by a factor of
+86400, the number of seconds in a day to move towards a differential rate in D.R.U. In addition, this is the rate for a <span class="math notranslate nohighlight">\(\rm GeV\)</span> wide energy band, so we must divide by <span class="math notranslate nohighlight">\(10^6\)</span>. finally, we divide left and right by <span class="math notranslate nohighlight">\(M_D\)</span>, the mass of the detector in kilograms, to arrive at a formula for the differential rate per kilogram of detector, in D.R.U. units,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\left(\frac{1}{M_D}\frac{dR}{dE_R}\right)\,{\rm [D.R.U.]}=&amp;
+\frac{8.64\times10^{-33}c\,N_A\,F^2(E_R)\,A^2\sigma_{\rm N}\,{\rm [pb]}\,
+\rho_{\rm H}\,{\rm [GeV/cc]}\,(m_nc^2)\,{\rm [GeV]}}
+{(m_wc^2)\,{\rm [GeV]}\,(\mu c^2\,{\rm [GeV]})^2\sqrt{\pi}\,\left(\frac{v_0}{c}\right)} \\
+&amp;\times\exp\left(\frac{-(m_Nc^2)\,{\rm [GeV]\,E_R\,{\rm [GeV]}}}{2(\mu c^2\,{\rm [GeV]})^2\left(\frac{v_0^2}{c^2}\right)}\right)\\
+=&amp;\frac{0.87\,F^2(E_R)\,A^2\sigma_{\rm N}\,{\rm [pb]}\,
+\rho_{\rm H}\,{\rm [GeV/cc]}\,(m_nc^2)\,{\rm [GeV]}}
+{(m_wc^2)\,{\rm [GeV]}\,(\mu c^2\,{\rm [GeV]})^2\,\left(\frac{v_0}{c}\right)} \\
+&amp;\times\exp\left(\frac{-(m_Nc^2)\,{\rm [GeV]\,E_R\,{\rm [GeV]}}}{2(\mu c^2\,{\rm [GeV]})^2\left(\frac{v_0^2}{c^2}\right)}\right),
+\tag{4.2}
+\end{align*}\end{split}\]</div>
+<p>Where in the final line I have evaluated the product <span class="math notranslate nohighlight">\(8.64\times10^{-33}cN_A/\sqrt{\pi}\)</span>, since it turns out to be of order 1. This looks a lot simpler if you leave out the unit specificiations, with the understanding that all masses and energies are in <span class="math notranslate nohighlight">\(\rm GeV\)</span>, the halo density is in <span class="math notranslate nohighlight">\(\rm GeV/cc\)</span>, and the WIMP nucleon cross section is in <span class="math notranslate nohighlight">\(\rm pb\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\left(\frac{1}{M_D}\frac{dR}{dE_R}\right)\,{\rm [D.R.U.]}=&amp;
+\frac{0.87F^2(E_R)A^2\sigma_{\rm N}\rho_{\rm H}m_N}{\mu^2m_w\left(\frac{v_0}{c}\right)}
+\exp\left(\frac{-m_NE_R}{2\mu^2\left(\frac{v_o}{c}\right)^2}\right)
+\tag{4.3}
+\end{align*}\]</div>
+</section>
+<section id="results-for-an-example-experiment">
+<h2>Results for an example experiment<a class="headerlink" href="#results-for-an-example-experiment" title="Permalink to this headline">#</a></h2>
+<p>In the PYTHON code below, I have plotted the differential event rate for a <span class="math notranslate nohighlight">\(\rm 1000\,kg\)</span> detector made of liquid Xenon, assuming a WIMP mass of <span class="math notranslate nohighlight">\(\rm 100\,GeV\)</span>. I have used Equation 4.3 multiplied by the detector mass. I have also plotted the total event rate, by adding differential event rates in each of the bins for my recoil energy array, and multiplied by 365 to get the total events in a year. You’ll see that if the WIMP mass were actually <span class="math notranslate nohighlight">\(\rm 100\,GeV\)</span>, and the WIMP-nucleon cross section were indeed <span class="math notranslate nohighlight">\(\rm 10^{-9}\,pb\)</span>, and the halo density really were <span class="math notranslate nohighlight">\(\rm 0.45\,GeV/cc\)</span>, you would have 10 events at the end of one year. Notice, however, that half of these events are below a recoil energy of <span class="math notranslate nohighlight">\(\rm 5\,keV\)</span>, rendering them difficult to detect given the reduced discrimination and increased level of backgrounds at low energies in realisitic detectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># recoil energy vector</span>
+<span class="n">er</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-9</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-6</span> <span class="c1"># in GeV</span>
+<span class="c1"># detector is xenon liquid, WIMP has 100GeV rest energy, halo density is 0.45GeV/cc</span>
+<span class="n">mn</span><span class="o">=</span><span class="mi">131</span>
+<span class="n">mw</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">rho</span><span class="o">=</span><span class="mf">0.45</span>
+<span class="c1"># calculate effective mass, halo virial velocity, speed of light in km/s, hbar*c in GeV*fm units</span>
+<span class="n">mu</span><span class="o">=</span><span class="p">(</span><span class="n">mn</span><span class="o">*</span><span class="n">mw</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">mn</span><span class="o">+</span><span class="n">mw</span><span class="p">)</span>
+<span class="n">v0</span><span class="o">=</span><span class="mi">230</span>
+<span class="n">c</span><span class="o">=</span><span class="mi">300000</span>
+<span class="n">hbarc</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="n">R</span><span class="o">=</span><span class="mf">6.1</span>
+<span class="n">A</span><span class="o">=</span><span class="n">mn</span>
+<span class="c1"># assume cross section is 1e-9 pb</span>
+<span class="n">sigma</span><span class="o">=</span><span class="mf">1e-9</span>
+<span class="c1"># assume a detector mass of 1000 kg</span>
+<span class="n">M_D</span><span class="o">=</span><span class="mi">1000</span>
+<span class="c1"># loop over recoil energies</span>
+<span class="n">dRbydE</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+<span class="n">fsquared</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+<span class="n">Rtot</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+<span class="n">ecount</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">der</span><span class="o">=</span><span class="n">er</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">er</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;der=&quot;</span><span class="p">,</span><span class="n">der</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">er</span><span class="p">:</span>
+    <span class="n">fsquared</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mn</span><span class="o">*</span><span class="n">e</span><span class="p">)</span><span class="o">/</span><span class="n">hbarc</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mn</span><span class="o">*</span><span class="n">e</span><span class="p">)</span><span class="o">/</span><span class="n">hbarc</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mn</span><span class="o">*</span><span class="n">e</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">R</span><span class="o">/</span><span class="n">hbarc</span><span class="o">/</span><span class="n">hbarc</span><span class="p">)</span>
+    <span class="n">dRbydE</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">=</span><span class="n">M_D</span><span class="o">*</span><span class="mf">0.87</span><span class="o">*</span><span class="n">fsquared</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">sigma</span><span class="o">*</span><span class="n">rho</span><span class="o">*</span><span class="n">mn</span><span class="o">/</span> <span class="p">(</span><span class="n">mu</span><span class="o">*</span><span class="n">mu</span><span class="o">*</span><span class="n">mw</span><span class="o">*</span><span class="p">(</span><span class="n">v0</span><span class="o">/</span><span class="n">c</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mn</span><span class="o">*</span><span class="n">e</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mu</span><span class="o">*</span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="n">v0</span><span class="o">*</span><span class="n">v0</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">c</span><span class="p">))))</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">ecount</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">Rtot</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">=</span><span class="n">Rtot</span><span class="p">[</span><span class="n">ecount</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">dRbydE</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">*</span><span class="n">der</span><span class="o">*</span><span class="mf">1e+6</span><span class="o">*</span><span class="mi">365</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Rtot</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">=</span><span class="n">dRbydE</span><span class="p">[</span><span class="n">ecount</span><span class="p">]</span><span class="o">*</span><span class="n">der</span><span class="o">*</span><span class="mf">1e+6</span><span class="o">*</span><span class="mi">365</span>
+    <span class="n">ecount</span><span class="o">+=</span><span class="mi">1</span>
+<span class="c1"># plot the differential rate</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+    <span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;font.sans-serif&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;legend.fontsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;figure.titlesize&#39;</span><span class="p">:</span> <span class="mi">14</span>
+<span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">dRbydE</span><span class="p">,</span> <span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="n">er</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">Rtot</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Recoil Energy (keV)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Differential Rate (events/day/keV), Cumulative Rate (events/year)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Differential Rate (DRU)&#39;</span><span class="p">,</span> <span class="s1">&#39;Cumulative Rate (events/year)&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">12.8</span><span class="p">,</span> <span class="mf">12.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>der= 3.0003000299029903e-09
+</pre></div>
+</div>
+<img alt="../_images/8880d15e947b1ae1369efa59323cb9f39f6cb1111f7e0b2f76f798ef669ae4b2.png" src="../_images/8880d15e947b1ae1369efa59323cb9f39f6cb1111f7e0b2f76f798ef669ae4b2.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter3/chapter3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 3 - Quantum analysis of WIMP nucleus scattering</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-of-the-rate-formula">Units of the rate formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-rate">Differential rate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporating-the-nuclear-structure-function">Incorporating the nuclear structure function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-to-the-nucleon-cross-section">Converting to the nucleon cross section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-distribution-of-wimps">Velocity distribution of WIMPs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dark-matter-rate-units-d-r-u">Dark matter Rate Units (D.R.U.)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-for-an-example-experiment">Results for an example experiment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
