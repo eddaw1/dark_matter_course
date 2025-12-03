@@ -9,3 +9,5 @@ chapters:
   title: Lecture 3
 - file: chapter4/chapter4.ipynb
   title: Lecture 4
+- file: chapter5/chapter5.ipynb
+  title: Lecture 5
