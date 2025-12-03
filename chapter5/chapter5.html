@@ -320,8 +320,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backgrounds">Backgrounds</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiation-from-the-earth">Radiation from the Earth</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shielding">Shielding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-radioactive-background">Sources of radioactive background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-radioactive">Sources of radioactive</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fiducialisation">Fiducialisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit">Limit</a></li>
 </ul>
 </li>
 </ul>
@@ -408,14 +409,23 @@ document.write(`
 <h2>Shielding<a class="headerlink" href="#shielding" title="Permalink to this headline">#</a></h2>
 <p>Cosmic rays are a major source of background spurious nuclear recoils. In a common mechanism, a cosmic ray muon scatters off a neutron in the vicinity of the detector, and the neutron enters the target and causes a nuclear recoil. Many more complex mechanisms and cascades originating in cosmic ray showers are possible. The primary defence against cosmic ray backgrounds is to operate the WIMP detector deep underground, and use the rock overburden above the detector to reduce the cosmic ray flux entering the detector. This is the main reason for the operation of deep underground labs for dark matter detection.</p>
 <p>The radiation background at the detector also contains a component that originates from the rock surrounding the detector in its cavern. This leads to most WIMP detectors being surrounded by shielding designed to reduce the flux of radiation entering the detector volume. Smaller detectors commonly use lead shielding against gamma rays and hydrocarbon shielding (usually borated wax) to shield against neutrons. Large detectors like LUX-ZEPLIN use a second skin layer of liquid xenon as a shield, and also use a very large volume of water in a tank around the detector to shield against neutrons.</p>
-<p>The last strategy is to install a secondary active detector outside the primary detection volume. This is called an active shield. Any event coincident with an event detected in the active veto is discarded, as a real WIMP would interact in the detector only once. The LUX-ZEPLIN detector has an active veto made of gadolinium loaded liquid scintillator. Gadolinium has a very high neutron capture cross section for very low energy neutrons. The excited gadolinium then de-excites with emission of a gamma, leading to scintillation light that is picked up by more photomultiplier tubes. The figure below shows LUX-ZEPLIN embedded in its water tank and active veto.</p>
+<p>The last strategy is to install a secondary active detector outside the primary detection volume. This is called an active shield. Any event coincident with an event detected in the active veto is discarded, as a real WIMP would interact in the detector only once. The LUX-ZEPLIN detector has an active veto made of gadolinium loaded liquid scintillator. Gadolinium has a very high neutron capture cross section for very low energy neutrons. The excited gadolinium then de-excites with emission of a gamma, leading to scintillation light that is picked up by more photomultiplier tubes.</p>
+<p>Finally the entire veto and detector is embedded in a water tank, the water being an effective shield against neutrons, as it contains many hydrogen atoms in the water molecules, having masses equal to that of the neutron. Neutrons are therefore effectively moderated in the water tank, hopefully not managing to penetrate to the veto or detector inside.</p>
+<p>The figure below shows LUX-ZEPLIN embedded in its water tank and active veto.</p>
 <p><img alt="lux_zeplin_in_shields" src="../_images/lux_zeplin_in_shields.png" /></p>
-<section id="sources-of-radioactive-background">
-<h3>Sources of radioactive background<a class="headerlink" href="#sources-of-radioactive-background" title="Permalink to this headline">#</a></h3>
+<section id="sources-of-radioactive">
+<h3>Sources of radioactive<a class="headerlink" href="#sources-of-radioactive" title="Permalink to this headline">#</a></h3>
+<p>There are many sources of background, one being cosmic rays. This is the reason why all sensitive detectors for WIMPS are run in underground laboratories. The most critical threat is cosmic ray muons scattering on or near the detector and causing ejection of neutrons that then contribute a nuclear recoil background. Underground operation at several kilometres water-equivalent in a laboratory such as Boulby reduces the cosmic ray flux by several orders of magnitude. Backgrounds are also produced by components of the detector itself, which may contain trace amounts of uranium and thorium that then result in the occasional decay following the chains discussed above. Also a problem is radon, produced in the Earth and filtering into the underground lab through the walls. As a gas, Radon can find its way into the Xenon itself, and a strict regimen of chemical cleaning of the Xenon and recirculation of Xenon in the detector through a cleaning apparatus is a key part of keeping backgrounds in the detector minimal.</p>
 </section>
 <section id="fiducialisation">
 <h3>Fiducialisation<a class="headerlink" href="#fiducialisation" title="Permalink to this headline">#</a></h3>
-<p>A final defence against backgrounds is to reconstruct where events took place in the detector and discard events whose reconstructed position is close to the detector surface. It turns out that the majority of the hits in LUX-ZEPLIN</p>
+<p>A final defence against backgrounds is to reconstruct where events took place in the detector and discard events whose reconstructed position is close to the detector surface. It turns out that the majority of the hits in LUX-ZEPLIN. The figure below shows the reconstructed positions of events in LUX-ZEPLIN. The vast majority of events are close to the side walls, the detector bottom, and the top electrode. These events are eliminated as canidates by discarding all events outside an acceptance region defined by the black line. The smaller this acceptance region, the smaller the effective mass of the detector, so there is trade-off between fiducialisation veto efficiency and detector mass.</p>
+<p><img alt="fiducialisation" src="../_images/surface_events.png" /></p>
+</section>
+<section id="limit">
+<h3>Limit<a class="headerlink" href="#limit" title="Permalink to this headline">#</a></h3>
+<p>As of January 2024, LUX-ZEPLIN succeeded in placing limits on the cross section for WIMP nucleon elastic scattering as low as <span class="math notranslate nohighlight">\(\rm 2\times10^{-12}\,pb\)</span>. To put this in context, this is roughly five orders of magnitude more stringent than the best results from when I left the WIMP dark matter collaborations in 2008. It is a remarkable piece of work, of which the collaborators in this endeavour should be very proud.</p>
+<p><img alt="limits_from_lux_zeplin" src="../_images/lux_zeplin_limit.png" /></p>
 </section>
 </section>
 </section>
@@ -496,8 +506,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backgrounds">Backgrounds</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiation-from-the-earth">Radiation from the Earth</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shielding">Shielding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-radioactive-background">Sources of radioactive background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-radioactive">Sources of radioactive</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fiducialisation">Fiducialisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit">Limit</a></li>
 </ul>
 </li>
 </ul>
