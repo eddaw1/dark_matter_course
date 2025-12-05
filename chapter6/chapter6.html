@@ -304,6 +304,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resonant-detection">Resonant detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-power">Signal power</a></li>
 </ul>
             </nav>
         </div>
@@ -341,6 +342,33 @@ h\nu &amp;= m_a c^2 + \frac{1}{2}m_a c^2 \left(\frac{v}{c}\right)^2.
 <p>In reality, we don’t know the axion mass, so we must use a tunable resonator. The simplist way to achieve this is to insert another metal object, a tuning rod, into the cavity, and allow for it to be moved around, varying the distance of the cavity axis from the symmetry axis of the cavity. The necessity of a movable tuning rod is in fact one of the most difficult aspects of operating an axion haloscope. It is both hard to move at the low temperatures that turn out to be necessary, and furthermore tends to reduce the quality factor <span class="math notranslate nohighlight">\(Q\)</span> of the electromagnetic resonance, and thereby the sensitivity of the detector.</p>
 <p>The picture below shows a view of the resonant cavity of the QSHS detector from above.</p>
 <p><img alt="cavity_from_above" src="../_images/cavity_from_above.jpeg" /></p>
+</section>
+<section id="signal-power">
+<h2>Signal power<a class="headerlink" href="#signal-power" title="Permalink to this headline">#</a></h2>
+<p>We will use a simplified model of the coupling of the axion field into the detector, where we model the detector as a resonant circuit, and the axion signal as a voltage source driving the circuit.</p>
+<p><img alt="axion_drive" src="../_images/axion_drive.png" /></p>
+<p>The voltage drive <span class="math notranslate nohighlight">\(V_a(t)\)</span> from the axion field is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+qV_a(t)&amp;=g_{a\gamma\gamma}a(t)c\varepsilon_0\int_V\vec{E}(\vec{x},t)\cdot\vec{B}(\vec{x},t)\,d^3\vec{x},
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is the magnitude of the charge on the plates of the capacitor modelling the stored energy in the cavity mode, <span class="math notranslate nohighlight">\(\vec{E}\)</span> is the electric field in the cavity mode, <span class="math notranslate nohighlight">\(\vec{B}\)</span> is the applied magnetic field,
+<span class="math notranslate nohighlight">\(a\)</span> is the axion field and <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}\)</span> is the coupling constant between axions and photons. Assuming that the applied magnetic field is uniform, <span class="math notranslate nohighlight">\(\vec{B}=B_0\hat{z}\)</span> we can write</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+qV_a(t)=g_{a\gamma\gamma}a(t)c\varepsilon_0 B_0\int_V \vec{E}\cdot\hat{z}\,dV
+\end{align*}\]</div>
+<p>The integral is essentially a feature of the cavity mode. It is the extent to which the electric field of the cavity mode is aligned with the axis over the volume of the cavity. This turns out only to be non-zero for a sub-class of the cavity modesl called the transverse magnetic, or TM modes. We define a geometric form factor, roughly analogous to the nuclear form factors we encountered in WIMP searches. Very approximately, it measures the extent of coupling of the axion field to the shape of the cavity mode, much as the nuclear form factor measures the amplitude for the WIMP interacting with a nucleus. The definition of the form factor is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+f_{\rm nlm}&amp;=\frac{\left(\int_V \vec{E}\cdot\hat{z}\,dV\right)^2}{V\int E^2\,dV} \\
+Vf_{\rm nlm} \int E^2\,dV&amp;=\left(\int\vec{E}\cdot\hat{z}\,dV\right)^2
+\end{align*}\end{split}\]</div>
+<p>We equate the energy stored in the cavity with the energy stored in the equivalent circuit, modelling the latter as the amount of energy stored in the capacitor.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\int\frac{1}{2}\varepsilon E^2\,dV=\frac{q^2}{2C}. 
+\end{align*}\]</div>
 </section>
 </section>
 
@@ -403,6 +431,7 @@ h\nu &amp;= m_a c^2 + \frac{1}{2}m_a c^2 \left(\frac{v}{c}\right)^2.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resonant-detection">Resonant detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-power">Signal power</a></li>
 </ul>
   </nav></div>
 
