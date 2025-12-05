@@ -11,3 +11,5 @@ chapters:
   title: Lecture 4
 - file: chapter5/chapter5.ipynb
   title: Lecture 5
+- file: chapter6/chapter6.ipynb
+  title: Lecture 6
