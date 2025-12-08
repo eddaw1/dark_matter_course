@@ -305,6 +305,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resonant-detection">Resonant detection</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-power">Signal power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-the-axion-to-photon-conversion-power-for-our-local-halo">Scaling the axion to photon conversion power for our local halo.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#halo-density-in-energy-units">Halo density in energy units.</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -350,25 +354,141 @@ h\nu &amp;= m_a c^2 + \frac{1}{2}m_a c^2 \left(\frac{v}{c}\right)^2.
 <p>The voltage drive <span class="math notranslate nohighlight">\(V_a(t)\)</span> from the axion field is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align*}
-qV_a(t)&amp;=g_{a\gamma\gamma}a(t)c\varepsilon_0\int_V\vec{E}(\vec{x},t)\cdot\vec{B}(\vec{x},t)\,d^3\vec{x},
+H_{a\gamma\gamma}=qV_a(t)&amp;=g_{a\gamma\gamma}a(t)c\varepsilon_0\int_V\vec{E}(\vec{x},t)\cdot\vec{B}(\vec{x},t)\,d^3\vec{x},
 \end{align*}\]</div>
-<p>where <span class="math notranslate nohighlight">\(q\)</span> is the magnitude of the charge on the plates of the capacitor modelling the stored energy in the cavity mode, <span class="math notranslate nohighlight">\(\vec{E}\)</span> is the electric field in the cavity mode, <span class="math notranslate nohighlight">\(\vec{B}\)</span> is the applied magnetic field,
-<span class="math notranslate nohighlight">\(a\)</span> is the axion field and <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}\)</span> is the coupling constant between axions and photons. Assuming that the applied magnetic field is uniform, <span class="math notranslate nohighlight">\(\vec{B}=B_0\hat{z}\)</span> we can write</p>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is the magnitude of the charge on the plates of the capacitor modelling the stored energy in the cavity mode, <span class="math notranslate nohighlight">\(\vec{E}\)</span> is the electric field in the cavity mode, <span class="math notranslate nohighlight">\(\vec{B}\)</span> is the applied magnetic field, <span class="math notranslate nohighlight">\(a\)</span> is the axion field and <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}\)</span> is the coupling constant between axions and photons. I have written that <span class="math notranslate nohighlight">\(qV_a(t)\)</span> is equal to <span class="math notranslate nohighlight">\(H_{a\gamma\gamma}\)</span>, the Hamiltonian term representing the interaction between an axion and two photons in the cavity, because in fact that is exactly what this term represents. Note that the product <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}a(t)\)</span> is dimensionless - it has no units. You can check for yourselves that the dimensions of the rest of the terms on the right are those of an energy in joules, the appropriate units for a term in the Hamiltonian.</p>
+<p>Assuming that the applied magnetic field is uniform, <span class="math notranslate nohighlight">\(\vec{B}=B_0\hat{z}\)</span> we can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{align*}
 qV_a(t)=g_{a\gamma\gamma}a(t)c\varepsilon_0 B_0\int_V \vec{E}\cdot\hat{z}\,dV
+\tag{6.1}
 \end{align*}\]</div>
-<p>The integral is essentially a feature of the cavity mode. It is the extent to which the electric field of the cavity mode is aligned with the axis over the volume of the cavity. This turns out only to be non-zero for a sub-class of the cavity modesl called the transverse magnetic, or TM modes. We define a geometric form factor, roughly analogous to the nuclear form factors we encountered in WIMP searches. Very approximately, it measures the extent of coupling of the axion field to the shape of the cavity mode, much as the nuclear form factor measures the amplitude for the WIMP interacting with a nucleus. The definition of the form factor is</p>
+<p>The integral is essentially a feature of the cavity mode. It is the extent to which the electric field of the cavity mode is aligned with the axis over the volume of the cavity. This turns out only to be non-zero for a sub-class of the cavity modesl called the transverse magnetic, or TM modes. We define a geometric form factor, roughly analogous to the nuclear form factors we encountered in WIMP searches. It measures the extent of coupling of the axion field to the shape of the cavity mode, much as the nuclear form factor measures the amplitude for the WIMP interacting with a nucleus. The definition of the form factor is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 f_{\rm nlm}&amp;=\frac{\left(\int_V \vec{E}\cdot\hat{z}\,dV\right)^2}{V\int E^2\,dV} \\
 Vf_{\rm nlm} \int E^2\,dV&amp;=\left(\int\vec{E}\cdot\hat{z}\,dV\right)^2
+\tag{6.2}
 \end{align*}\end{split}\]</div>
 <p>We equate the energy stored in the cavity with the energy stored in the equivalent circuit, modelling the latter as the amount of energy stored in the capacitor.</p>
 <div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\int\frac{1}{2}\varepsilon_0 E^2\,dV&amp;=\frac{q^2}{2C} \\
+\int E^2\,dV &amp;=\frac{q^2}{\varepsilon_0 C}. 
+\end{align*}\end{split}\]</div>
+<p>We substitute this back into Equation 6.2 and obtain</p>
+<div class="math notranslate nohighlight">
 \[\begin{align*}
-\int\frac{1}{2}\varepsilon E^2\,dV=\frac{q^2}{2C}. 
+\left(\int\vec{E}\cdot\hat{z}\,dV\right)^2&amp;=\frac{Vf_{\rm nlm}q^2}{\varepsilon_0 C}. 
+\tag{6.3}
 \end{align*}\]</div>
+<p>We square Equation 6.1 to obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+q^2V_a^2 &amp;= g_{a\gamma\gamma}^2a^2(t)c^2\varepsilon_0^2 B_0^2\left(\int_V \vec{E}\cdot\hat{z}\,dV\right)^2.
+\tag{6.4}
+\end{align*}\]</div>
+<p>We substitute in Equation 6.3 and arrive at</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+q^2V_a^2 &amp;= g_{a\gamma\gamma}^2a^2(t)c^2\varepsilon_0^2 B_0^2\frac{Vf_{\rm nlm}q^2}{\varepsilon_0 C}.
+\tag{6.5}
+\end{align*}\]</div>
+<p>Cancelling factors of <span class="math notranslate nohighlight">\(q^2\)</span> and <span class="math notranslate nohighlight">\(\varepsilon_0\)</span> we arrive at</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+V_a^2&amp;=\frac{g_{a\gamma\gamma}^2a^2(t)c^2\varepsilon_0 B_0^2 Vf_{\rm nlm}}{C}
+\end{align*}\]</div>
+<p>The power <span class="math notranslate nohighlight">\(P_{a\rightarrow\gamma}\)</span> deposited in the equivalent circuit is <span class="math notranslate nohighlight">\(V_a^2/R\)</span>, so</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+P_{a\rightarrow\gamma}&amp;=\frac{g_{a\gamma\gamma}^2a^2(t)c^2\varepsilon_0 B_0^2 Vf_{\rm nlm}}{RC}
+\tag{6.6}
+\end{align*}\]</div>
+<p>Now, for an <span class="math notranslate nohighlight">\(RLC\)</span> circuit, the angular resonant frequency in terms of the circuit parameters is <span class="math notranslate nohighlight">\(\omega_0=1/\sqrt{LC}\)</span>, and the quality factor of the resonance is <span class="math notranslate nohighlight">\(Q=(1/R)\sqrt(L/C)\)</span>. Multiplying these two identities together we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\omega_0 Q=\frac{1}{RC}. 
+\end{align*}\]</div>
+<p>Inserting this into Equation 6.6 we obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+P_{a\rightarrow\gamma}&amp;=g_{a\gamma\gamma}^2a^2(t)c^2\varepsilon_0 B_0^2 Vf_{\rm nlm}\omega_0 Q.
+\tag{6.7}
+\end{align*}\]</div>
+<p>Notice that now all references to properties of the equivalent circuit, the voltage <span class="math notranslate nohighlight">\(V_a\)</span> of the drive, together the resistance, inductance and capacitance of the circuit elements, have been removed from the equation for power. The quantities that have replaced them, in particular the resonant frequency and quality factor of the resonance, can be determined experimentally by measuring the properties of the resonance of the cavity that was previously represented by the equivalent circuit.</p>
+</section>
+<section id="scaling-the-axion-to-photon-conversion-power-for-our-local-halo">
+<h2>Scaling the axion to photon conversion power for our local halo.<a class="headerlink" href="#scaling-the-axion-to-photon-conversion-power-for-our-local-halo" title="Permalink to this headline">#</a></h2>
+<p>This section shows you how to go from Equation 6.7, which is in watts, but doesn’t give you any physically meaningful scale for the axion field strength <span class="math notranslate nohighlight">\(a^2\)</span>. In this section I bring in some results from axion theory and phenomenology to show you the path to a result where <span class="math notranslate nohighlight">\(a^2\)</span> is expressed in terms of the axion mass and coupling to photons. This is more useful for laboratory experiments.</p>
+<p>As discussed at the start of this lecture, the quantity <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}^2a^2\)</span> is dimensionless. <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}\)</span> is the amplitude for axion to photon coupling, which is usually given using energy units, such that <span class="math notranslate nohighlight">\([g_{a\gamma\gamma}]={\rm GeV^{-1}}\)</span>. Therefore the units of <span class="math notranslate nohighlight">\(a^2\)</span> had better be <span class="math notranslate nohighlight">\(\rm GeV^2\)</span> overall. However, we know that the power for axion to photon conversion is going to be proportional to <span class="math notranslate nohighlight">\(\rho_H\)</span>, the halo density of dark matter, presuming that it is axions. The usual units of <span class="math notranslate nohighlight">\(\rho_H\)</span> are <span class="math notranslate nohighlight">\(\rm GeV/cc\)</span>. How do wo express this halo density in energy units?</p>
+<section id="halo-density-in-energy-units">
+<h3>Halo density in energy units.<a class="headerlink" href="#halo-density-in-energy-units" title="Permalink to this headline">#</a></h3>
+<p>We know that the energy <span class="math notranslate nohighlight">\(E\)</span> associated with a field oscillating at angular frequency <span class="math notranslate nohighlight">\(\omega\)</span> is <span class="math notranslate nohighlight">\(E=\hbar\omega\)</span>. In terms of wave number, we have <span class="math notranslate nohighlight">\(E=\hbar c k\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the wave number. If we have an energy interval <span class="math notranslate nohighlight">\(\Delta E\)</span> measured in <span class="math notranslate nohighlight">\(\rm eV\)</span> units, this therefore corresponds to some wave number interval <span class="math notranslate nohighlight">\(\Delta k\)</span> in <span class="math notranslate nohighlight">\(\rm cm^{-1}\)</span> units. We can write, keeping track of the units with square brackets, that <span class="math notranslate nohighlight">\(\Delta E\,{\rm [eV]}=\hbar c\,{\rm [eV\,cm]}\,\Delta k\,{\rm cm^{-1}}\)</span>. Using a higher precision than before, we have <span class="math notranslate nohighlight">\(\hbar c ={\rm 0.197\,GeV\,fm}\)</span>. We have used more significant figures here than before because we’ll be converting <span class="math notranslate nohighlight">\(\rm cm^3\)</span> into <span class="math notranslate nohighlight">\(\rm eV^{-3}\)</span>, so that any rounding error gets more significant with the cube. Therefore <span class="math notranslate nohighlight">\(\hbar c = {\rm 0.197\times10^9\,eV\,fm}\)</span>. A femtometer <span class="math notranslate nohighlight">\(\rm fm\)</span> is <span class="math notranslate nohighlight">\(\rm 10^{-13}\,cm\)</span>, so that <span class="math notranslate nohighlight">\(\hbar c={\rm 0.\times10^9\times10^{-13}\,eV\,cm}\)</span>, or <span class="math notranslate nohighlight">\(\rm 1.97\times10^{-5}\,eV/cm^{-1}\)</span>. We therefore have <span class="math notranslate nohighlight">\(\rm \Delta E\,[eV]=1.97\times10^{-5}\,[eV\,cm]\,\Delta k\,[cm^{-1}]\)</span>.</p>
+<p>Therefore a halo density of <span class="math notranslate nohighlight">\(\rm \rho_H=0.45\,GeV/cc\)</span> converts to <span class="math notranslate nohighlight">\(\rho_H=\rm 0.45\times10^9\,{\rm [eV\,cm^{-3}]}\times (1.97\times10^{-5}\,{\rm[eV/(cm)^{-1}]})^3=3.44\times10^{-6}\,{\rm eV^4}\)</span>. This is the halo density in energy units. The fourth power arises because in pure energy units a length has inverse energy units, so that 1/volume has units of energy cubed.</p>
+<p>Overall, then, our dimensionless quantity <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}^2 a^2\)</span> is going to contain <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}^2\rho_H\)</span>, which has units of energy squared. What other quantity can appear to make it overall dimensionless? The obvious quantity is the axion mass, <span class="math notranslate nohighlight">\(m_a\)</span>. If this axion mass is squared and in the denominator, then the power from axion to photon conversion in the cavity becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+P_{a\rightarrow\gamma}&amp;=\left(\frac{g_{a\gamma\gamma}^2\,{\rm [eV^{-2}]}\rho_H\,{\rm [eV^4]}}{m_a^2 {\rm [eV^2]}}\right)c^2\varepsilon_0 B_0^2 Vf_{\rm nlm}\omega_0 Q
+\tag{6.8}
+\end{align*}\]</div>
+<p>There is nothing to be concerned about here regarding the introduced factor of <span class="math notranslate nohighlight">\(m_a\)</span>. All this does is change the definition of the coupling <span class="math notranslate nohighlight">\(g_{a\gamma\gamma}\)</span> to that which is commonly employed in axion theory. All the quantities in the parentheses can now be written in energy units, so that this quantity becomes a (model dependent) dimensionless number, which we can evaluate independent of the axion mass or other physical properties.</p>
+<p>As I taught in my 1st lecture, the axion mass and the energy <span class="math notranslate nohighlight">\(f_{\rm PQ}\)</span> at which the Peccei Quinn symmetry broke are related. We work here in energy units, so that when I say mass I mean energy of the particle at rest. The most recent theoretical analysis papers connect a symmetry breaking energy of
+<span class="math notranslate nohighlight">\(10^{12}\,{\rm GeV}=10^{21}\,{\rm eV}\)</span> with an axion mass of <span class="math notranslate nohighlight">\(5.707\times10^{-6}\,{\rm eV}\)</span>. Writing <span class="math notranslate nohighlight">\(m_a f_{\rm PQ}=5.707\times 10^{-6}\,{\rm eV}\times 10^{21}\,{\rm eV}\)</span> we obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+m_a=5.707\times10^{-6}\,{\rm eV}\times\frac{10^{21}\,{\rm eV}}{f_{\rm PQ}\,{\rm [eV]}}
+\tag{6.9}
+\end{align*}\]</div>
+<p>Also taught in my first lecture, the axion to photon coupling is also related to the energy <span class="math notranslate nohighlight">\(f_{\rm PQ}\)</span>. This relationship is written in terms of a model dependent number <span class="math notranslate nohighlight">\(g_\gamma\)</span>, which is of order 1, but depends on exactly which QCD axion model you are using. <span class="math notranslate nohighlight">\(g_\gamma\)</span> is <span class="math notranslate nohighlight">\(+0.97\)</span> for KSVZ axions and <span class="math notranslate nohighlight">\(-0.36\)</span> for DFSZ axions. In general we write</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+g_{a\gamma\gamma}=\frac{\alpha g_\gamma}{\pi f_{\rm PQ}},
+\tag{6.10}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha=1/137\)</span> is the fine structure constant of atomic physics. We combine Equations 6.9 and 6.10 to eliminate the energy scale <span class="math notranslate nohighlight">\(f_{\rm PQ}\)</span> and express the axion to photon coupling in terms of
+its mass and the model dependent numerical parameter <span class="math notranslate nohighlight">\(g_\gamma\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\frac{g_{a\gamma\gamma}}{m_a}=\frac{1}{10^{-21}\,{\rm eV}\times 5.707\times10^{-6}\,{\rm eV}}\frac{\alpha g_\gamma}{\pi}.
+\end{align*}\]</div>
+<p>Squaring this quantity and multiplying by <span class="math notranslate nohighlight">\(\rho_H\)</span>, we obtain a dimensionless number, since the units cancel.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{g_{a\gamma\gamma}^2\rho_H}{m_a^2}&amp;=\frac{1}{\left(10^{-21}\,{\rm eV}\times 5.707\times10^{-6}\,{\rm eV}\right)^2}\frac{\alpha^2 g_\gamma^2}{\pi^2}\times3.44\times10^{-6}\,{\rm [eV^4]} \\
+&amp;=5.365\times10^{-43}.
+\end{align*}\end{split}\]</div>
+<p>On the second line I have evaluated all the quantities on the first one. I have assumed that <span class="math notranslate nohighlight">\(g_\gamma=0.97\)</span>, which is the scale for KSVZ axions.
+The resultant dimensionless scale is inserted into Equation 6.8 in place of the bracket.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+P_{a\rightarrow\gamma}&amp;=5.365\times10^{-43}c^2\varepsilon_0 B_0^2 Vf_{\rm nlm}\omega_0 Q
+\tag{6.11}
+\end{align*}\]</div>
+<p>We convert from <span class="math notranslate nohighlight">\(\omega_0\)</span> to <span class="math notranslate nohighlight">\(f_0\)</span>, the resonant frequency in <span class="math notranslate nohighlight">\(\rm Hz\)</span>, by factoring out the <span class="math notranslate nohighlight">\(2\pi\)</span> and scaling the prefactor with it.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+P_{a\rightarrow\gamma}&amp;=3.371\times10^{-42}c^2\varepsilon_0 B_0^2 Vf_{\rm nlm}f_0 Q
+\tag{6.11}
+\end{align*}\]</div>
+<p>If you use SI units for all the quantities on the right, the power for axion conversion into photons, if those axions are KSVZ axions, in Watts, will result. This is an incredible formula, as it takes the most esoteric particle theory and astrophysics, and produces from it a useful formula for how much power you can expect in a terrestrial experiment. Experimentalists often prefer to scale the dimensionful quantities using values that correspond to their expectations for what they can build. For example, suppose we were experimentalists working on the ADMX experiment. We would have a cavity volume of 220 litres, or <span class="math notranslate nohighlight">\(\rm 0.22\,m^3\)</span>, a magnetic field of <span class="math notranslate nohighlight">\(\rm 7.6\,T\)</span>, and resonant frequencies of around <span class="math notranslate nohighlight">\(\rm 700\,MHz\)</span>. We’ve already assumed KSVZ axions, so that if <span class="math notranslate nohighlight">\(g_\gamma\)</span> differs from 0.97 we need to modify by the ratio of the actual <span class="math notranslate nohighlight">\(g_\gamma\)</span> to 0.97 squared, and similarly we’ve assumed a halo density of <span class="math notranslate nohighlight">\(\rm 0.45\,GeV/cc\)</span> so the power must be scaled by the ratio of <span class="math notranslate nohighlight">\(\rho_H\)</span> to this assumed number.</p>
+<p>We first multiply out the numerical prefactor by <span class="math notranslate nohighlight">\(c^2\varepsilon_0\)</span>, where <span class="math notranslate nohighlight">\(c^2=9.0\times10^{16}{\rm m^2s^{-2}}\)</span> and <span class="math notranslate nohighlight">\(\varepsilon_0=8.85\times10^{-12}\,{\rm F\,m^{-1}}\)</span> This leads to a modified dimensional prefactor of <span class="math notranslate nohighlight">\(2.685\times10^{-36}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+P_{a\rightarrow\gamma}&amp;=2.685\times10^{-36} B_0^2 Vf_{\rm nlm}f_0 Q
+\tag{6.12}
+\end{align*}\]</div>
+<p>We now insert in both numerator and denominator numerical factors for the scale expected for the cavity, magnetic field, resonant frequency and Q. Scalings for <span class="math notranslate nohighlight">\(g_\gamma\)</span> and <span class="math notranslate nohighlight">\(\rho_H\)</span> were already assumed, so factors that correct for different values of these parameters are inserted without numerical compensation in the numerator. We arrive at</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+P_{a\rightarrow\gamma}&amp;=2.685\times10^{-36}(7.6\,{\rm T})^2\left(\frac{B_0}{7.6\,{\rm T}}\right)^2 0.22\,{\rm m^3} \left(\frac{V}{0.22\,{\rm m^3}}\right)f_{\rm nlm}
+700\times10^{6}\,{\rm Hz}\left(\frac{f_0}{700\,{\rm MHz}}\right) 70000\left(\frac{Q}{70000}\right)\left(\frac{g_\gamma}{0.97}\right)^2\left(\frac{\rho_H}{0.45\,{\rm GeV/cc}}\right) \\
+&amp;=1.52\times10^{-21}\,{\rm W}\left(\frac{B_0}{7.6\,{\rm T}}\right)^2\left(\frac{V}{0.22\,{\rm m^3}}\right)\left(\frac{f_0}{700\,{\rm MHz}}\right)\left(\frac{Q}{70000}\right)
+\left(\frac{g_\gamma}{0.97}\right)^2\left(\frac{\rho_H}{0.45\,{\rm GeV/cc}}\right),
+\tag{6.13}
+\end{align*}\end{split}\]</div>
+<p>where on the last line the units of all quantities in brackets are the same in the numerator as the units of the scale in the denominator. The prefactor now gives a scale for the amount of power we might expect from a KSVZ axion in the ADMX detector. Similar scalings can be derived for other detectors with different cavities, search frequencies, magnetic fields, and so on.</p>
+</section>
 </section>
 </section>
 
@@ -432,6 +552,10 @@ Vf_{\rm nlm} \int E^2\,dV&amp;=\left(\int\vec{E}\cdot\hat{z}\,dV\right)^2
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resonant-detection">Resonant detection</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-power">Signal power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-the-axion-to-photon-conversion-power-for-our-local-halo">Scaling the axion to photon conversion power for our local halo.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#halo-density-in-energy-units">Halo density in energy units.</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
