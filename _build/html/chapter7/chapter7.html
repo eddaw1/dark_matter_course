@@ -344,7 +344,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 \frac{2\pi}{L}&amp;=\frac{2\pi \delta f}{c}. \\
-\delta f = \frac{c}{L}.
+\delta f &amp;= \frac{c}{L}.
 \end{align*}\end{split}\]</div>
 <p>Now, suppose we have a frequency range between two ends <span class="math notranslate nohighlight">\(f_1\)</span> and <span class="math notranslate nohighlight">\(f_2\)</span>, called a band, with bandwidth <span class="math notranslate nohighlight">\(B=f_2-f_1\)</span>. Then the number of modes that fit in this band is <span class="math notranslate nohighlight">\(B/(c/L)=BL/c\)</span>. If each of these modes is fed by some source of radiation at temperature <span class="math notranslate nohighlight">\(T\)</span>, and has reached thermodynamic equilibrium with this radiation source, then by the classical theorem of equipartition, each mode contains an average energy of <span class="math notranslate nohighlight">\(k_BT\)</span>. Recall that modes of oscillators each have two degrees of freedom owing to their storing energy in kinetic and potential forms. Therefore the total energy <span class="math notranslate nohighlight">\(U\)</span> in the modes in this band is</p>
 <div class="math notranslate nohighlight">
@@ -410,7 +410,7 @@ p(E)=A(\beta)e^{-\beta E}.
 <div class="math notranslate nohighlight">
 \[\begin{align*}
 \frac{dA}{d\beta}&amp;=A\overline{E}.
-\tag{7.1}
+\tag{7.2}
 \end{align*}\]</div>
 <p>We next return to the expression for <span class="math notranslate nohighlight">\(\overline{E}\)</span>, the average energy.</p>
 <div class="math notranslate nohighlight">
@@ -423,19 +423,19 @@ p(E)=A(\beta)e^{-\beta E}.
 \frac{d\overline{E}}{d\beta}&amp;=\int\frac{dA}{d\beta}\,E\,e^{-\beta E}\,dE-\int\,A\,E^2\,e^{-\beta E}\,dE \\
 &amp;=\int\frac{dA}{d\beta}\,E\,e^{-\beta E}\,dE-\overline{E^2}.
 \end{align*}\end{split}\]</div>
-<p>We substitute in from Equation 7.1, and factor the <span class="math notranslate nohighlight">\(\overline{E}\)</span> out of the left hand integral.</p>
+<p>We substitute in from Equation 7.2, and factor the <span class="math notranslate nohighlight">\(\overline{E}\)</span> out of the left hand integral.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 \frac{d\overline{E}}{d\beta}&amp;=\overline{E}\int\,E\,A\,e^{-\beta E}\,dE-\overline{E^2}. \\
 &amp;=\overline{E}^2-\overline{E^2}.
-\tag{7.2}
+\tag{7.3}
 \end{align*}\end{split}\]</div>
 <p>Next we re-introduce temperature <span class="math notranslate nohighlight">\(T\)</span> by writing</p>
 <div class="math notranslate nohighlight">
 \[\begin{align*}
 \frac{d\overline{E}}{d\beta}&amp;=\frac{d\overline{E}}{dT}\frac{dT}{d\beta}. 
 \end{align*}\]</div>
-<p>Now, <span class="math notranslate nohighlight">\(\beta=1/(k_BT)\)</span>, so that <span class="math notranslate nohighlight">\(d\beta/dT=-1/(k_BT^2)\)</span>, and <span class="math notranslate nohighlight">\(dT/d\beta=-k_BT^2\)</span>. Substituting this in to Equation 7.2, we get</p>
+<p>Now, <span class="math notranslate nohighlight">\(\beta=1/(k_BT)\)</span>, so that <span class="math notranslate nohighlight">\(d\beta/dT=-1/(k_BT^2)\)</span>, and <span class="math notranslate nohighlight">\(dT/d\beta=-k_BT^2\)</span>. Substituting this in to Equation 7.3, we get</p>
 <div class="math notranslate nohighlight">
 \[\begin{align*}
 k_B T^2\frac{d\overline{E}}{dT}&amp;=\overline{E^2}-\overline{E}^2. 
@@ -444,27 +444,27 @@ k_B T^2\frac{d\overline{E}}{dT}&amp;=\overline{E^2}-\overline{E}^2.
 <div class="math notranslate nohighlight">
 \[\begin{align*}
 \sigma_E^2&amp;=k_BT^2\frac{d\overline{E}}{dT}.
-\tag{7.3}
+\tag{7.4}
 \end{align*}\]</div>
 <p>This result was first derived, as far as I know, by J. Willard Gibbs in his book Elementary Principles In Statistical Mechanics, published in 1901. Though the title makes it seem like a textbook, in fact this is the book where Gibbs laid out the foundations of statistical mechanics. The derivation is on pages 68-72. Its importance to axion searches will become clear, but it is also of central importance in radio astronomy and any other field where measurements of a signal on top of noise in thermal equilibrium are being made. This is, of course, most experiments, so it is a very important result. I think this result is one of the unsung heroes of physics, because of its immense generality and utility.</p>
 </section>
 <section id="the-radiometer-equation-applied-to-johnson-noise">
 <h2>The radiometer equation applied to Johnson noise.<a class="headerlink" href="#the-radiometer-equation-applied-to-johnson-noise" title="Permalink to this headline">#</a></h2>
-<p>For Johnson noise, we know that the average power emitted by a resistor at temperature <span class="math notranslate nohighlight">\(T\)</span> matched to a transmission line is <span class="math notranslate nohighlight">\(P=k_B T B\)</span>, where <span class="math notranslate nohighlight">\(B\)</span> is the bandwidth. Therefore, in a time interval <span class="math notranslate nohighlight">\(t\)</span>, the average amount of energy transmitted by the noise source is <span class="math notranslate nohighlight">\(\overline{E}=k_B T B t\)</span>. We insert this average energy into Gibb’s radiometer equation, 7.3, and obtain</p>
+<p>For Johnson noise, we know that the average power emitted by a resistor at temperature <span class="math notranslate nohighlight">\(T\)</span> matched to a transmission line is <span class="math notranslate nohighlight">\(P=k_B T B\)</span>, where <span class="math notranslate nohighlight">\(B\)</span> is the bandwidth. Therefore, in a time interval <span class="math notranslate nohighlight">\(t\)</span>, the average amount of energy transmitted by the noise source is <span class="math notranslate nohighlight">\(\overline{E}=k_B T B t\)</span>. We insert this average energy into Gibb’s radiometer equation, 7.4, and obtain</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 \sigma_E^2&amp;=k_B^2 T^2 B t \\
 \sigma_E&amp;= k_B T\sqrt{Bt} \\
 \frac{\sigma_E}{\overline{E}}&amp;=\frac{k_B T \sqrt{Bt}}{k_B T B t}. \\
 \frac{\sigma_E}{\overline{E}}&amp;=\frac{1}{\sqrt{Bt}}. 
-\tag{7.4}
+\tag{7.5}
 \end{align*}\end{split}\]</div>
 <p>Let us interpret this result. Suppose we measure the energy incident from our resistive source at temperature <span class="math notranslate nohighlight">\(T\)</span> over a time interval <span class="math notranslate nohighlight">\(t\)</span>. What result can we hope to get? It won’t be exactly the average <span class="math notranslate nohighlight">\(\overline{E}\)</span>, there will be some spread about this value. The root mean square, or standard deviation, of that spread is <span class="math notranslate nohighlight">\(\sigma_E\)</span>. If we divide the energy received by the time interval over which it was received, <span class="math notranslate nohighlight">\(t\)</span>, then <span class="math notranslate nohighlight">\(\overline{E}/t\)</span> is an estimate of the noise power <span class="math notranslate nohighlight">\(P_N\)</span> emitted by the source. The spread in the recevied value is <span class="math notranslate nohighlight">\(\sigma_N=\sigma_E/t\)</span>. Because both <span class="math notranslate nohighlight">\(\overline{E}\)</span> and <span class="math notranslate nohighlight">\(\sigma_E\)</span> have been divided by the same time interval <span class="math notranslate nohighlight">\(t\)</span>, their ratio remains the same, so we can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 \frac{\sigma_N}{P_N}&amp;=\frac{1}{\sqrt{Bt}} \\
 \frac{1}{\sigma_N}&amp;=\frac{1}{P_N}\sqrt{Bt},
-\tag{7.5}
+\tag{7.6}
 \end{align*}\end{split}\]</div>
 <p>where on the last line I have rearranged the terms in a manner that will prove convenient in the ensuing discussion. The important application of this result to our work is in the use of power spectra to express the output of detectors in a series of frequency bands, each of bandwidth <span class="math notranslate nohighlight">\(B\)</span>, where the power spectrum is fashioned out of data taken over a time interval <span class="math notranslate nohighlight">\(t\)</span>. Each of these frequency bands, or bins, has an average power <span class="math notranslate nohighlight">\(P_N\)</span>. They are all the same because Johnson noise is approximately independent of frequency in the low frequency limit. However, what you see in a power spectrum is a jagged line about an average value, because of the fluctuations in the measured power about the average power. The root mean square of these fluctuations is <span class="math notranslate nohighlight">\(\sigma_N\)</span>. It gets smaller if you either increase the amount of time over which the power was estimated, or you increase the bandwidth of each of the bins.</p>
 <p>Now, suppose one of the bins contains a small signal <span class="math notranslate nohighlight">\(P_S\)</span> in addition to the noise. This signal is always present, and it is only present, for simplicity, in one of the bands. As you acquire power for longer and longer, the root mean square fluctuation between bins drops as the square root of the integration time. Put simply, the power spectrum gets smoother, and if you integrate for long enough, the signal becomes visible above the fluctuations in the noise.</p>
@@ -472,11 +472,11 @@ k_B T^2\frac{d\overline{E}}{dT}&amp;=\overline{E^2}-\overline{E}^2.
 <div class="math notranslate nohighlight">
 \[\begin{align*}
 {\rm SNR}=\frac{P_S}{\sigma_N}=\frac{P_S}{P_N}\sqrt{Bt}. 
-\tag{7.6}
+\tag{7.7}
 \end{align*}\]</div>
 <section id="application-to-axion-detection">
 <h3>Application to axion detection<a class="headerlink" href="#application-to-axion-detection" title="Permalink to this headline">#</a></h3>
-<p>Let us see why this is so useful for axion searches. Suppose your signal power over the bandwidth of the axion signal is a tenth that of the raw noise power. This means that <span class="math notranslate nohighlight">\(P_S/P_N=0.1\)</span>. Suppose the axion signal covers a bandwidth of <span class="math notranslate nohighlight">\(\rm 1\,kHz\)</span>. Let us say that you can make out the axion signal when it is four times the height of the root mean square noise fluctuations, so that the target <span class="math notranslate nohighlight">\(\rm SNR\)</span> is <span class="math notranslate nohighlight">\(4\)</span>. How long do you have to integrate to achieve this signal to noise ratio? Equation 7.6 tells us the answer. It becomes <span class="math notranslate nohighlight">\(4=0.1\sqrt{1000t}\)</span>, so <span class="math notranslate nohighlight">\(1000t=40^2=1600\)</span>, therefore <span class="math notranslate nohighlight">\(t=1.6\,{\rm s}\)</span>. So in 1.6 seconds, even with a raw signal power that is only a tenth that of the raw noise power, you’ll still be able to see the axion signal as a small power excess on top of the fluctuations in the surrounding noise floor.</p>
+<p>Let us see why this is so useful for axion searches. Suppose your signal power over the bandwidth of the axion signal is a tenth that of the raw noise power. This means that <span class="math notranslate nohighlight">\(P_S/P_N=0.1\)</span>. Suppose the axion signal covers a bandwidth of <span class="math notranslate nohighlight">\(\rm 1\,kHz\)</span>. Let us say that you can make out the axion signal when it is four times the height of the root mean square noise fluctuations, so that the target <span class="math notranslate nohighlight">\(\rm SNR\)</span> is <span class="math notranslate nohighlight">\(4\)</span>. How long do you have to integrate to achieve this signal to noise ratio? Equation 7.7 tells us the answer. It becomes <span class="math notranslate nohighlight">\(4=0.1\sqrt{1000t}\)</span>, so <span class="math notranslate nohighlight">\(1000t=40^2=1600\)</span>, therefore <span class="math notranslate nohighlight">\(t=1.6\,{\rm s}\)</span>. So in 1.6 seconds, even with a raw signal power that is only a tenth that of the raw noise power, you’ll still be able to see the axion signal as a small power excess on top of the fluctuations in the surrounding noise floor.</p>
 <p>However, the win by averaging over long times for weak signals is a slow one because of the square root. Suppose instead <span class="math notranslate nohighlight">\(P_S/P_N\)</span> were <span class="math notranslate nohighlight">\(0.01\)</span>. In this case you have <span class="math notranslate nohighlight">\(4=0.01\sqrt{1000t}\)</span>, so that <span class="math notranslate nohighlight">\(1000t=1.6\times10^5\)</span>, You need to integrate for <span class="math notranslate nohighlight">\(\rm 160\,s\)</span> to achieve an <span class="math notranslate nohighlight">\(\rm SNR\)</span> of 4. If the integration times get too long, then aspects of your detector may start to drift, and this drift will spoil the effect of the averaging on the noise fluctuations by causing the baseline, or noise floor, to drift around.</p>
 </section>
 </section>
