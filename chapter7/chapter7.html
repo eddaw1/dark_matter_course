@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Noise in axion experiments &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7/chapter7';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Axion detectors" href="../chapter6/chapter6.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../dark_matter_detection.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../dark_matter_detection.html">
+                    Dark matter candidates and detectors
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/chapter1.html">Lecture 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/chapter2.html">Lecture 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/chapter3.html">Lecture 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/chapter4.html">Lecture 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter5/chapter5.html">Lecture 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter6/chapter6.html">Lecture 6</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 7</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter7/chapter7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Noise in axion experiments</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluctuations-and-the-radiometer-equation">Fluctuations and the radiometer equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radiometer-equation-applied-to-johnson-noise">The radiometer equation applied to Johnson noise.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-axion-detection">Application to axion detection</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="noise-in-axion-experiments">
+<h1>Noise in axion experiments<a class="headerlink" href="#noise-in-axion-experiments" title="Permalink to this headline">#</a></h1>
+<section id="fluctuations-and-the-radiometer-equation">
+<h2>Fluctuations and the radiometer equation<a class="headerlink" href="#fluctuations-and-the-radiometer-equation" title="Permalink to this headline">#</a></h2>
+<p>The level of fluctuations in the noise background is regulated by the radiometer equation, which we now derive. Consider a classical system which has available to it a contiouous set of states having energy <span class="math notranslate nohighlight">\(E\)</span>. The system is in thermal equilibrium at a temperature <span class="math notranslate nohighlight">\(T\)</span>. We do not know how many available states there are at each energy <span class="math notranslate nohighlight">\(E\)</span>, or indeed what the system consists of, but we do know that it is governed by Maxwell Bolzmann statistics. The probability density <span class="math notranslate nohighlight">\(p(E)\)</span> of the system having energy <span class="math notranslate nohighlight">\(E\)</span> can be</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+p(E)=A(T)e^{-\frac{E}{k_BT}},
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A(T)\)</span> is the number of available states at energy <span class="math notranslate nohighlight">\(E\)</span>, and is generally a function of the temperature of the system. It will make the derivation easier to write <span class="math notranslate nohighlight">\(\beta=1/(k_BT)\)</span>, so that we obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+p(E)=A(\beta)e^{-\beta E}.
+\end{align*}\]</div>
+<p>The probability density obeys a normalisation condition, so that</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\int_{E=0}^\infty p(E)\,dE=\int A(\beta)e^{-\beta E}\,dE=1,
+\end{align*}\]</div>
+<p>where during this derivation all integrals will be between <span class="math notranslate nohighlight">\(E=0\)</span> and <span class="math notranslate nohighlight">\(E=+\infty\)</span>. We differentiate this expression with respect to <span class="math notranslate nohighlight">\(\beta\)</span> and obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\frac{d}{d\beta}\int A(\beta)e^{-\beta E}\,dE&amp;=0,
+\end{align*}\]</div>
+<p>We bring the differential inside the integral over energies and apply the product rule to differentiate first <span class="math notranslate nohighlight">\(A(\beta)\)</span> and then <span class="math notranslate nohighlight">\(e^{-\beta E}\)</span>, both of which are <span class="math notranslate nohighlight">\(\beta\)</span> dependent.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\int \left(\frac{dA}{d\beta}e^{-\beta E}-E\,A(\beta)e^{-\beta E}\right)\,dE&amp;=0 \\
+\int \frac{dA}{d\beta}e^{-\beta E}\,dE&amp;=\int\,E\,A(\beta)e^{-\beta E}.
+\end{align*}\end{split}\]</div>
+<p>The right hand side is <span class="math notranslate nohighlight">\(\int\,Ep(E)dE\)</span>, which is <span class="math notranslate nohighlight">\(\overline{E}\)</span>, the average value of the energy. The <span class="math notranslate nohighlight">\(dA/d\beta\)</span> on the left has no <span class="math notranslate nohighlight">\(E\)</span> dependence and can be pulled out of the integral. In addition, we can introduce <span class="math notranslate nohighlight">\(A/A\)</span> on the right. We obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\frac{1}{A}\frac{dA}{d\beta}\int\,A\,e^{-\beta E}\,dE &amp;=\overline{E}. 
+\end{align*}\]</div>
+<p>The integral is <span class="math notranslate nohighlight">\(1\)</span> because it is equal to <span class="math notranslate nohighlight">\(\int\,p(E)dE\)</span>. Hence we can write</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\frac{dA}{d\beta}&amp;=A\overline{E}.
+\tag{7.1}
+\end{align*}\]</div>
+<p>We next return to the expression for <span class="math notranslate nohighlight">\(\overline{E}\)</span>, the average energy.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\overline{E}&amp;=\int\,E\,p(E)\,dE=\int E\,A(\beta)e^{-\beta E}\,dE
+\end{align*}\]</div>
+<p>Differentiating,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{d\overline{E}}{d\beta}&amp;=\int\frac{dA}{d\beta}\,E\,e^{-\beta E}\,dE-\int\,A\,E^2\,e^{-\beta E}\,dE \\
+&amp;=\int\frac{dA}{d\beta}\,E\,e^{-\beta E}\,dE-\overline{E^2}.
+\end{align*}\end{split}\]</div>
+<p>We substitute in from Equation 7.1, and factor the <span class="math notranslate nohighlight">\(\overline{E}\)</span> out of the left hand integral.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{d\overline{E}}{d\beta}&amp;=\overline{E}\int\,E\,A\,e^{-\beta E}\,dE-\overline{E^2}. \\
+&amp;=\overline{E}^2-\overline{E^2}.
+\tag{7.2}
+\end{align*}\end{split}\]</div>
+<p>Next we re-introduce temperature <span class="math notranslate nohighlight">\(T\)</span> by writing</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\frac{d\overline{E}}{d\beta}&amp;=\frac{d\overline{E}}{dT}\frac{dT}{d\beta}. 
+\end{align*}\]</div>
+<p>Now, <span class="math notranslate nohighlight">\(\beta=1/(k_BT)\)</span>, so that <span class="math notranslate nohighlight">\(d\beta/dT=-1/(k_BT^2)\)</span>, and <span class="math notranslate nohighlight">\(dT/d\beta=-k_BT^2\)</span>. Substituting this in to Equation 7.2, we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+k_B T^2\frac{d\overline{E}}{dT}&amp;=\overline{E^2}-\overline{E}^2. 
+\end{align*}\]</div>
+<p>Now, the difference between the average of the square of a quantity and the square of the average of a quantity is also known as the variance of that quantity. We therefore write <span class="math notranslate nohighlight">\(\sigma_E^2=\overline{E^2}-\overline{E}^2\)</span>, so that we arrive at</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\sigma_E^2&amp;=k_BT^2\frac{d\overline{E}}{dT}.
+\tag{7.3}
+\end{align*}\]</div>
+<p>This result was first derived, as far as I know, by J. Willard Gibbs in his book ‘’’Elementary Principles In Statistical Mechanics’’’, published in 1901. Though the title makes it seem like a textbook, in fact this is the book where Gibbs laid out the foundations of statistical mechanics. The derivation is on pages 68-72. Its importance to axion searches will become clear, but it is also of central importance in radio astronomy and any other field where measurements of a signal on top of noise in thermal equilibrium are being made. This is, of course, most experiments, so it is a very important result. I think this result is one of the unsung heroes of physics, because of its immense generality and utility.</p>
+</section>
+<section id="the-radiometer-equation-applied-to-johnson-noise">
+<h2>The radiometer equation applied to Johnson noise.<a class="headerlink" href="#the-radiometer-equation-applied-to-johnson-noise" title="Permalink to this headline">#</a></h2>
+<p>For Johnson noise, we know that the average power emitted by a resistor at temperature <span class="math notranslate nohighlight">\(T\)</span> matched to a transmission line is <span class="math notranslate nohighlight">\(P=k_B T B\)</span>, where <span class="math notranslate nohighlight">\(B\)</span> is the bandwidth. Therefore, in a time interval <span class="math notranslate nohighlight">\(t\)</span>, the average amount of energy transmitted by the noise source is <span class="math notranslate nohighlight">\(\overline{E}=k_B T B t\)</span>. We insert this average energy into Gibb’s radiometer equation, 7.3, and obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\sigma_E^2&amp;=k_B^2 T^2 B t \\
+\sigma_E&amp;= k_B T\sqrt{Bt} \\
+\frac{\sigma_E}{\overline{E}}&amp;=\frac{k_B T \sqrt{Bt}}{k_B T B t}. \\
+\frac{\sigma_E}{\overline{E}}&amp;=\frac{1}{\sqrt{Bt}}. 
+\tag{7.4}
+\end{align*}\end{split}\]</div>
+<p>Let us interpret this result. Suppose we measure the energy incident from our resistive source at temperature <span class="math notranslate nohighlight">\(T\)</span> over a time interval <span class="math notranslate nohighlight">\(t\)</span>. What result can we hope to get? It won’t be exactly the average <span class="math notranslate nohighlight">\(\overline{E}\)</span>, there will be some spread about this value. The root mean square, or standard deviation, of that spread is <span class="math notranslate nohighlight">\(\sigma_E\)</span>. If we divide the energy recieved by the time interval over which it was received, <span class="math notranslate nohighlight">\(t\)</span>, then <span class="math notranslate nohighlight">\(\overline{E}/t\)</span> is an estimate of the noise power <span class="math notranslate nohighlight">\(P_N\)</span> emitted by the source. The spread in the recevied value is <span class="math notranslate nohighlight">\(\sigma_N=\sigma_E/t\)</span>. Because both <span class="math notranslate nohighlight">\(\overline{E}\)</span> and <span class="math notranslate nohighlight">\(\sigma_E\)</span> have been divided by the same time interval <span class="math notranslate nohighlight">\(t\)</span>, their ratio remains the same, so we can write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{\sigma_N}{P_N}&amp;=\frac{1}{\sqrt{Bt}} \\
+\frac{1}{\sigma_N}&amp;=\frac{1}{P_N}\sqrt{Bt},
+\tag{7.5}
+\end{align*}\end{split}\]</div>
+<p>where on the last line I have rearranged the terms in a manner that will prove convenient in the ensuing discussion. The important application of this result to our work is in the use of power spectra to express the output of detectors in a series of frequency bands, each of bandwidth <span class="math notranslate nohighlight">\(B\)</span>, where the power spectrum is fashioned out of data taken over a time interval <span class="math notranslate nohighlight">\(t\)</span>. Each of these frequency bands, or bins, has an average power <span class="math notranslate nohighlight">\(P_N\)</span>. They are all the same because Johnson noise is approximately independent of frequency in the low frequency limit. However, what you see in a power spectrum is a jagged line about an average value, because of the fluctuations in the measured power about the average power. The root mean square of these fluctuations is <span class="math notranslate nohighlight">\(\sigma_N\)</span>. It gets smaller if you either increase the amount of time over which the power was estimated, or you increase the bandwidth of each of the bins.</p>
+<p>Now, suppose one of the bins contains a small signal <span class="math notranslate nohighlight">\(P_S\)</span> in addition to the noise. This signal is always present, and it is only present, for simplicity, in one of the bands. As you acquire power for longer and longer, the root mean square fluctuation between bins drops as the square root of the integration time. Put simply, the power spectrum gets smoother, and if you integrate for long enough, the signal becomes visible above the fluctuations in the noise.</p>
+<p>We define the signal to noise ratio, or <span class="math notranslate nohighlight">\(\rm SNR\)</span>, as the ratio of the signal power <span class="math notranslate nohighlight">\(P_S\)</span> to the root mean square noise fluctuation, <span class="math notranslate nohighlight">\(\sigma_N\)</span>. Inserting <span class="math notranslate nohighlight">\(P_S\)</span> into Equation 7.5, we obtain the form in which the radiometer equation is usually written for its applications to radio astronomy and axion searches.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+{\rm SNR}=\frac{P_S}{\sigma_N}=\frac{P_S}{P_N}\sqrt{Bt}. 
+\tag{7.6}
+\end{align*}\]</div>
+<section id="application-to-axion-detection">
+<h3>Application to axion detection<a class="headerlink" href="#application-to-axion-detection" title="Permalink to this headline">#</a></h3>
+<p>Let us see why this is so useful for axion searches. Suppose your signal power over the bandwidth of the axion signal is a tenth that of the raw noise power. This means that <span class="math notranslate nohighlight">\(P_S/P_N=0.1\)</span>. Suppose the axion signal covers a bandwidth of <span class="math notranslate nohighlight">\(\rm 1\,kHz\)</span>. Let us say that you can make out the axion signal when it is four times the height of the root mean square noise fluctuations, so that the target <span class="math notranslate nohighlight">\(\rm SNR\)</span> is <span class="math notranslate nohighlight">\(4\)</span>. How long do you have to integrate to achieve this signal to noise ratio. Equation 7.6 tells us the answer. It becomes <span class="math notranslate nohighlight">\(4=0.1\sqrt{1000t}\)</span>, so <span class="math notranslate nohighlight">\(1000t=40^2=1600\)</span>, therefore <span class="math notranslate nohighlight">\(t=1.6\,{\rm s}\)</span>. So in 1.6 seconds, even with a raw signal power that is only a tenth that of the raw noise power, you’ll still be able to see the axion signal as a small power excess on top of the fluctuations in the surrounding noise floor.</p>
+<p>However, the win by averaging over long times for weak signals is a slow one because of the square root. Suppose instead <span class="math notranslate nohighlight">\(P_S/P_N\)</span> were <span class="math notranslate nohighlight">\(0.01\)</span>. In this case you have <span class="math notranslate nohighlight">\(4=0.01\sqrt{1000t}\)</span>, so that <span class="math notranslate nohighlight">\(1000t=1.6\times10^5\)</span>, You need to integrate for <span class="math notranslate nohighlight">\(\rm 160\,s\)</span> to achieve an <span class="math notranslate nohighlight">\(\rm SNR\)</span> of 4. If the integration times get too long, then aspects of your detector may start to drift, and this drift will spoil the effect of the averaging on the noise fluctuations by causing the baseline, or noise floor, to drift around.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter6/chapter6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Axion detectors</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluctuations-and-the-radiometer-equation">Fluctuations and the radiometer equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radiometer-equation-applied-to-johnson-noise">The radiometer equation applied to Johnson noise.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-axion-detection">Application to axion detection</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
