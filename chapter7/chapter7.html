@@ -304,6 +304,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nyquist-s-theorem-for-the-noise-power-emitted-by-a-resistor">Nyquist’s theorem for the noise power emitted by a resistor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluctuations-and-the-radiometer-equation">Fluctuations and the radiometer equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radiometer-equation-applied-to-johnson-noise">The radiometer equation applied to Johnson noise.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-axion-detection">Application to axion detection</a></li>
@@ -322,8 +323,58 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="noise-in-axion-experiments">
 <h1>Noise in axion experiments<a class="headerlink" href="#noise-in-axion-experiments" title="Permalink to this headline">#</a></h1>
+<section id="nyquist-s-theorem-for-the-noise-power-emitted-by-a-resistor">
+<h2>Nyquist’s theorem for the noise power emitted by a resistor<a class="headerlink" href="#nyquist-s-theorem-for-the-noise-power-emitted-by-a-resistor" title="Permalink to this headline">#</a></h2>
+<p>We have an apparatus at some low temperature <span class="math notranslate nohighlight">\(T\)</span> with microwaves moving around it, and the microwaves we care most about are carried in cables. Some of those microwaves are potentially originating with axion dark matter. The vast majority of them are instead originating in the random motions of charged electrons undergoing random motion at the physical temperature <span class="math notranslate nohighlight">\(T\)</span> of the apparatus.</p>
+<p>This derivation is all about figuring out the noise power emitted by a humble resistor. In order to do that, we start off by examining a coaxial cable that the resistor will eventually be connected to. Here is a diagram of that cable.</p>
+<p><img alt="coaxial_cable" src="../_images/cable1.png" /></p>
+<p>The cable is of length <span class="math notranslate nohighlight">\(L\)</span>. We’re going to focus on travelling waves travelling to the right. These can be represented by an ordinary one dimensional travelling wave, <span class="math notranslate nohighlight">\(\psi=\psi^0\cos(kx-\omega t)\)</span>. We set <span class="math notranslate nohighlight">\(t=0\)</span> and focus on what things look like in <span class="math notranslate nohighlight">\(x\)</span>, so <span class="math notranslate nohighlight">\(\psi=\psi^0\cos(kx)\)</span>. Now we do something that on the face of it seems peculier, and assert some boundary conditions that are not really physical. These are called periodic boundary conditions, and state that only waves whose phase is the same at the two ends of this piece of cable are permitted. This means that the longest wavelength that can travel down the cable is <span class="math notranslate nohighlight">\(L\)</span>. We’ll assume that waves travel at speed <span class="math notranslate nohighlight">\(c\)</span> in the cable, so that <span class="math notranslate nohighlight">\(\omega=ck\)</span>. For the boundary condition to be true we must have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\cos(kx+kL)&amp;=\cos(kx) \\
+\end{align*}\end{split}\]</div>
+<p>But using an addition formula,</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\cos(kx+kL)&amp;=\cos(kx)\cos(kL)-\sin(kx)\sin(kL).
+\end{align*}\]</div>
+<p>For this to equal <span class="math notranslate nohighlight">\(\cos(kx)\)</span>, we must have <span class="math notranslate nohighlight">\(\cos(kL)=1\)</span> and <span class="math notranslate nohighlight">\(\sin(kL)=0\)</span>. These two constraints are only satisfied if <span class="math notranslate nohighlight">\(kL=2n\pi\)</span>. This means that with these periodic boundary conditions in place, the gap between modes in wavenumber is <span class="math notranslate nohighlight">\(\delta k\,L=2\pi\)</span>, or
+<span class="math notranslate nohighlight">\(\delta k = 2\pi/L\)</span>.</p>
+<p>Now, we’re actually interested in the frequency spacing between modes. Because <span class="math notranslate nohighlight">\(\omega = 2\pi f=ck\)</span> we have <span class="math notranslate nohighlight">\(\delta k = 2\pi\delta f/c\)</span>. We substitute that into our expression for <span class="math notranslate nohighlight">\(\delta k\)</span> and obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\frac{2\pi}{L}&amp;=\frac{2\pi \delta f}{c}. \\
+\delta f = \frac{c}{L}.
+\end{align*}\end{split}\]</div>
+<p>Now, suppose we have a frequency range between two ends <span class="math notranslate nohighlight">\(f_1\)</span> and <span class="math notranslate nohighlight">\(f_2\)</span>, called a band, with bandwidth <span class="math notranslate nohighlight">\(B=f_2-f_1\)</span>. Then the number of modes that fit in this band is <span class="math notranslate nohighlight">\(B/(c/L)=BL/c\)</span>. If each of these modes is fed by some source of radiation at temperature <span class="math notranslate nohighlight">\(T\)</span>, and has reached thermodynamic equilibrium with this radiation source, then by the classical theorem of equipartition, each mode contains an average energy of <span class="math notranslate nohighlight">\(k_BT\)</span>. Recall that modes of oscillators each have two degrees of freedom owing to their storing energy in kinetic and potential forms. Therefore the total energy <span class="math notranslate nohighlight">\(U\)</span> in the modes in this band is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+U&amp;=\frac{k_BTBL}{c}.
+\end{align*}\]</div>
+<p>The energy density, or energy per unit length in these modes, <span class="math notranslate nohighlight">\(u\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+u=\frac{U}{L}=\frac{k_BTB}{c}
+\end{align*}\]</div>
+<p>The average energy exiting out of the right hand end of the cable  per unit time is the energy density in these modes times their velocity of propagation, which is c. This leads to a formula for the power exiting the right hand end of the cable in a bandwidth, or range, <span class="math notranslate nohighlight">\(B\)</span>, in frequency.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+P=k_BTB
+\tag{7.1}
+\end{align*}\]</div>
+<p>Now let us terminate the cable at both ends with resistive loads, whose resistances are equal to the characteristic impedence of the cable. The characteristic impedence is the ratio of the voltage between the outer conductor and the current flowing in the conductors (in opposite directions in the two conductors).</p>
+<p><img alt="terminated_cable" src="../_images/cable1terminated.png" /></p>
+<p>It turns out that if the characteristic impedence is made equal to the terminating impedences, any power travelling down the cable and encountering the resistor is absorbed by the resistor without any reflection.</p>
+<p>We are requiring that the cable is in thermodynamic equilibrium with the resistances. If all the power that flows into the resistors is absorbed without reflection, then if the resistor doesn’t emit anything it would warm up because of the energy dissipated in it from the incoming power. In thermodynamic equilibrium, it must be that the resistor emits the same amount of power as it is absorbing from the cable in the bandwidth <span class="math notranslate nohighlight">\(B\)</span>. Since this argument is independent of the bandwidth, we conclude that Equation 7.1 is also a formula for the power emitted into a bandwidth <span class="math notranslate nohighlight">\(B\)</span> of frequency by a resistor at temperature <span class="math notranslate nohighlight">\(T\)</span> in thermodynamic equilibrium with a cable with characteristic impedence equal to that of the resistor. This result is known as Nyquist’s theorem.</p>
+<p>We can extend this result by imagining that we measure the energy that the resistor emits, or absorbs, in a time <span class="math notranslate nohighlight">\(t\)</span>. This will be the power times the time interval <span class="math notranslate nohighlight">\(t\)</span>. On average, the energy in the flowing radiation will be</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\overline{E}&amp;=k_BTBt
+\end{align*}\]</div>
+</section>
 <section id="fluctuations-and-the-radiometer-equation">
 <h2>Fluctuations and the radiometer equation<a class="headerlink" href="#fluctuations-and-the-radiometer-equation" title="Permalink to this headline">#</a></h2>
+<p>As shown above, we can work out the average energy emitted by a cable, or a resistor matched to it, into a bandwidth <span class="math notranslate nohighlight">\(B\)</span> when they have reached thermodynamic equilibrium at temperature <span class="math notranslate nohighlight">\(T\)</span>, when the energy is measured over a time interval <span class="math notranslate nohighlight">\(t\)</span>. However, this is only the average energy flow. In practice, in any given time interval <span class="math notranslate nohighlight">\(t\)</span>, the energy will probably be near to this average value, but will differ from it by some small amount. After all, the radiation being measured consists of noise, and noise is always subject to fluctuations. These fluctuations need to be understood by the experimentalist who is trying to detect a small signal, such as that which may be emitted by axion dark matter converting into radiation in our detector.</p>
 <p>The level of fluctuations in the noise background is regulated by the radiometer equation, which we now derive. Consider a classical system which has available to it a contiouous set of states having energy <span class="math notranslate nohighlight">\(E\)</span>. The system is in thermal equilibrium at a temperature <span class="math notranslate nohighlight">\(T\)</span>. We do not know how many available states there are at each energy <span class="math notranslate nohighlight">\(E\)</span>, or indeed what the system consists of, but we do know that it is governed by Maxwell Bolzmann statistics. The probability density <span class="math notranslate nohighlight">\(p(E)\)</span> of the system having energy <span class="math notranslate nohighlight">\(E\)</span> can be</p>
 <div class="math notranslate nohighlight">
 \[\begin{align*}
@@ -408,7 +459,7 @@ k_B T^2\frac{d\overline{E}}{dT}&amp;=\overline{E^2}-\overline{E}^2.
 \frac{\sigma_E}{\overline{E}}&amp;=\frac{1}{\sqrt{Bt}}. 
 \tag{7.4}
 \end{align*}\end{split}\]</div>
-<p>Let us interpret this result. Suppose we measure the energy incident from our resistive source at temperature <span class="math notranslate nohighlight">\(T\)</span> over a time interval <span class="math notranslate nohighlight">\(t\)</span>. What result can we hope to get? It won’t be exactly the average <span class="math notranslate nohighlight">\(\overline{E}\)</span>, there will be some spread about this value. The root mean square, or standard deviation, of that spread is <span class="math notranslate nohighlight">\(\sigma_E\)</span>. If we divide the energy recieved by the time interval over which it was received, <span class="math notranslate nohighlight">\(t\)</span>, then <span class="math notranslate nohighlight">\(\overline{E}/t\)</span> is an estimate of the noise power <span class="math notranslate nohighlight">\(P_N\)</span> emitted by the source. The spread in the recevied value is <span class="math notranslate nohighlight">\(\sigma_N=\sigma_E/t\)</span>. Because both <span class="math notranslate nohighlight">\(\overline{E}\)</span> and <span class="math notranslate nohighlight">\(\sigma_E\)</span> have been divided by the same time interval <span class="math notranslate nohighlight">\(t\)</span>, their ratio remains the same, so we can write</p>
+<p>Let us interpret this result. Suppose we measure the energy incident from our resistive source at temperature <span class="math notranslate nohighlight">\(T\)</span> over a time interval <span class="math notranslate nohighlight">\(t\)</span>. What result can we hope to get? It won’t be exactly the average <span class="math notranslate nohighlight">\(\overline{E}\)</span>, there will be some spread about this value. The root mean square, or standard deviation, of that spread is <span class="math notranslate nohighlight">\(\sigma_E\)</span>. If we divide the energy received by the time interval over which it was received, <span class="math notranslate nohighlight">\(t\)</span>, then <span class="math notranslate nohighlight">\(\overline{E}/t\)</span> is an estimate of the noise power <span class="math notranslate nohighlight">\(P_N\)</span> emitted by the source. The spread in the recevied value is <span class="math notranslate nohighlight">\(\sigma_N=\sigma_E/t\)</span>. Because both <span class="math notranslate nohighlight">\(\overline{E}\)</span> and <span class="math notranslate nohighlight">\(\sigma_E\)</span> have been divided by the same time interval <span class="math notranslate nohighlight">\(t\)</span>, their ratio remains the same, so we can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 \frac{\sigma_N}{P_N}&amp;=\frac{1}{\sqrt{Bt}} \\
@@ -489,6 +540,7 @@ k_B T^2\frac{d\overline{E}}{dT}&amp;=\overline{E^2}-\overline{E}^2.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nyquist-s-theorem-for-the-noise-power-emitted-by-a-resistor">Nyquist’s theorem for the noise power emitted by a resistor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluctuations-and-the-radiometer-equation">Fluctuations and the radiometer equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radiometer-equation-applied-to-johnson-noise">The radiometer equation applied to Johnson noise.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-axion-detection">Application to axion detection</a></li>
